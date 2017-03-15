@@ -5,31 +5,35 @@
 \contentsline {chapter}{Resumen}{\es@scroman {vii}}{section*.2}
 \contentsline {chapter}{Agradecimientos}{\es@scroman {ix}}{section*.3}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.14}
-\contentsline {section}{\numberline {1.1}Planteamiento del Problema}{1}{section.15}
-\contentsline {section}{\numberline {1.2}Trabajos previos}{1}{section.17}
-\contentsline {section}{\numberline {1.3}Objetivo}{2}{section.18}
-\contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{3}{chapter.19}
-\contentsline {section}{\numberline {2.1}El sistema de Posicionamiento Global - GPS}{3}{section.20}
-\contentsline {subsection}{\numberline {2.1.1}La constelaci\IeC {\'o}n NAVSTAR}{3}{subsection.21}
-\contentsline {subsection}{\numberline {2.1.2}Dispositivos GPS}{3}{subsection.22}
-\contentsline {subsection}{\numberline {2.1.3}Fundamento matem\IeC {\'a}tico}{5}{subsection.26}
-\contentsline {subsection}{\numberline {2.1.4}Causas de error}{5}{subsection.27}
-\contentsline {subsubsection}{Error causado por el sat\IeC {\'e}lite}{5}{section*.28}
-\contentsline {subsubsection}{Error causado por la atm\IeC {\'o}sfera}{5}{section*.29}
-\contentsline {subsubsection}{Error causado por rutas m\IeC {\'u}ltiples}{5}{section*.31}
-\contentsline {subsubsection}{Error causado por el receptor}{6}{section*.32}
-\contentsline {section}{\numberline {2.2}Comunicaci\IeC {\'o}n inal\IeC {\'a}mbrica}{6}{section.33}
-\contentsline {subsection}{\numberline {2.2.1}Protocolo ZigBee}{6}{subsection.35}
-\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'o}dulo UHF del Ublox C94-M8P GPS}{7}{subsection.36}
-\contentsline {section}{\numberline {2.3}Sistemas de c\IeC {\'o}mputo embebidos}{7}{section.37}
-\contentsline {subsection}{\numberline {2.3.1}BeagleBone}{7}{subsection.38}
-\contentsline {section}{\numberline {2.4}Real Time Kinematics}{7}{section.39}
-\contentsline {section}{\numberline {2.5}Formato RTCM3}{8}{section.40}
-\contentsline {section}{\numberline {2.6}RTKLIB}{8}{section.43}
-\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o del experimento}{9}{chapter.44}
-\contentsline {section}{\numberline {3.1}Prototipo}{9}{section.45}
-\contentsline {section}{\numberline {3.2}Descripci\IeC {\'o}n del funcionamiento}{9}{section.46}
-\contentsline {section}{\numberline {3.3}Descripci\IeC {\'o}n del experimento}{9}{section.47}
-\contentsline {chapter}{\numberline {4}Resultados}{11}{chapter.48}
-\contentsline {chapter}{\numberline {5}Conclusiones}{13}{chapter.49}
-\contentsline {chapter}{Bibliograf\'{\i }a}{65}{appendix*.50}
+\contentsline {section}{\numberline {1.1}Importancia del tema}{1}{section.15}
+\contentsline {section}{\numberline {1.2}Planteamiento del Problema}{1}{section.16}
+\contentsline {section}{\numberline {1.3}Trabajos previos}{2}{section.18}
+\contentsline {subsection}{\numberline {1.3.1}Propuesta}{2}{subsection.19}
+\contentsline {section}{\numberline {1.4}Objetivo}{3}{section.20}
+\contentsline {subsection}{\numberline {1.4.1}General}{3}{subsection.21}
+\contentsline {subsection}{\numberline {1.4.2}Objetivos espec\IeC {\'\i }ficos}{3}{subsection.22}
+\contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{5}{chapter.23}
+\contentsline {section}{\numberline {2.1}El sistema de Posicionamiento Global - GPS}{5}{section.24}
+\contentsline {subsection}{\numberline {2.1.1}La constelaci\IeC {\'o}n NAVSTAR}{5}{subsection.26}
+\contentsline {subsection}{\numberline {2.1.2}Dispositivos GPS}{6}{subsection.28}
+\contentsline {subsection}{\numberline {2.1.3}Fundamento matem\IeC {\'a}tico}{7}{subsection.32}
+\contentsline {subsection}{\numberline {2.1.4}Causas de error}{7}{subsection.33}
+\contentsline {subsubsection}{Error causado por el sat\IeC {\'e}lite}{7}{section*.34}
+\contentsline {subsubsection}{Error causado por la atm\IeC {\'o}sfera}{8}{section*.36}
+\contentsline {subsubsection}{Error causado por rutas m\IeC {\'u}ltiples}{8}{section*.39}
+\contentsline {subsubsection}{Error causado por el receptor}{9}{section*.41}
+\contentsline {subsubsection}{Error por Disponibilidad Selectiva}{9}{section*.42}
+\contentsline {section}{\numberline {2.2}Comunicaci\IeC {\'o}n inal\IeC {\'a}mbrica}{9}{section.44}
+\contentsline {subsection}{\numberline {2.2.1}Protocolo ZigBee}{10}{subsection.47}
+\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'o}dulo UHF del Ublox C94-M8P GPS}{11}{subsection.49}
+\contentsline {section}{\numberline {2.3}Sistemas de c\IeC {\'o}mputo embebidos}{11}{section.50}
+\contentsline {subsection}{\numberline {2.3.1}BeagleBone Black}{11}{subsection.51}
+\contentsline {section}{\numberline {2.4}Real Time Kinematics}{12}{section.53}
+\contentsline {section}{\numberline {2.5}Formato RTCM3}{13}{section.55}
+\contentsline {section}{\numberline {2.6}RTKLIB}{13}{section.58}
+\contentsline {chapter}{\numberline {3}Dise\IeC {\~n}o del experimento}{15}{chapter.59}
+\contentsline {section}{\numberline {3.1}Prototipo}{15}{section.60}
+\contentsline {section}{\numberline {3.2}Descripci\IeC {\'o}n del funcionamiento}{15}{section.61}
+\contentsline {section}{\numberline {3.3}Descripci\IeC {\'o}n del experimento}{15}{section.62}
+\contentsline {chapter}{\numberline {4}Resultados}{17}{chapter.63}
+\contentsline {chapter}{\numberline {5}Conclusiones}{19}{chapter.64}

@@ -16,134 +16,121 @@
   {}
 \endgroup
 
-\entry{Reference3}{article}{}
-  \name{author}{4}{}{%
+\entry{de2011diseno}{thesis}{}
+  \name{author}{5}{}{%
     {{}%
-     {Arnold}{A.}%
-     {A.~S.}{A.~S.}%
+     {Cruz~Bautista}{C.~B.}%
+     {Veronica}{V.}%
+     {De~la}{D.~l.}%
+     {}{}}%
+    {{}%
+     {Luna~Vazquez}{L.~V.}%
+     {MA}{M.}%
      {}{}%
      {}{}}%
     {{}%
-     {Wilson}{W.}%
-     {J.~S.}{J.~S.}%
+     {Navarro~Tapia}{N.~T.}%
+     {Tatiana}{T.}%
      {}{}%
      {}{}}%
     {{}%
-     {Boshier}{B.}%
-     {M.~G.}{M.~G.}%
+     {Robles~Valdez}{R.~V.}%
+     {Edgar~O}{E.~O.}%
      {}{}%
      {}{}}%
     {{}%
-     {Smith}{S.}%
-     {J.}{J.}%
+     {Ramirez~Arguelles}{R.~A.}%
+     {Mario~A}{M.~A.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{AAS+1}
-  \strng{fullhash}{AASWJSBMGSJ1}
-  \field{labelyear}{1998}
-  \field{sortinit}{A}
-  \field{abstract}{%
-  Operating a laser diode in an extended cavity which provides
-  frequency-selective feedback is a very effective method of reducing the
-  laser's linewidth and improving its tunability. We have developed an
-  extremely simple laser of this type, built from inexpensive commercial
-  components with only a few minor modifications. A 780~nm laser built to this
-  design has an output power of 80~mW, a linewidth of 350~kHz, and it has been
-  continuously locked to a Doppler-free rubidium transition for several days.%
-  }
-  \field{number}{3}
-  \field{pages}{1236\bibrangedash 1239}
-  \field{title}{A Simple Extended-Cavity Diode Laser}
-  \verb{url}
-  \verb http://link.aip.org/link/?RSI/69/1236/1
-  \endverb
-  \field{volume}{69}
-  \field{journaltitle}{Review of Scientific Instruments}
-  \field{month}{03}
-  \field{year}{1998}
+  \strng{namehash}{CBVDl+1}
+  \strng{fullhash}{CBVDlLVMNTTRVEORAMA1}
+  \field{labelyear}{2011}
+  \field{sortinit}{C}
+  \field{title}{Diseño de una estrategia log{\'i}stica de rutas para la
+  distribuc{\'i}on de productos farmac{\'e}uticos.}
+  \field{type}{phdthesis}
+  \field{year}{2011}
 \endentry
 
-\entry{Reference1}{article}{}
+\entry{maldonado2010controlador}{article}{}
   \name{author}{3}{}{%
     {{}%
-     {Hawthorn}{H.}%
-     {C.~J.}{C.~J.}%
+     {Maldonado~Hidalgo}{M.~H.}%
+     {Diego~Armando}{D.~A.}%
      {}{}%
      {}{}}%
     {{}%
-     {Weber}{W.}%
-     {K.~P.}{K.~P.}%
+     {Ram{\'\i}rez~Acosta}{R.~A.}%
+     {Christian~Felipe}{C.~F.}%
      {}{}%
      {}{}}%
     {{}%
-     {Scholten}{S.}%
-     {R.~E.}{R.~E.}%
+     {Villarreal~Quintero}{V.~Q.}%
+     {Miguel~Eduardo}{M.~E.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{HCJWKPSRE1}
-  \strng{fullhash}{HCJWKPSRE1}
-  \field{labelyear}{2001}
-  \field{sortinit}{H}
-  \field{abstract}{%
-  We have developed an enhanced Littrow configuration extended cavity diode
-  laser (ECDL) that can be tuned without changing the direction of the output
-  beam. The output of a conventional Littrow ECDL is reflected from a plane
-  mirror fixed parallel to the tuning diffraction grating. Using a free-space
-  Michelson wavemeter to measure the laser wavelength, we can tune the laser
-  over a range greater than 10 nm without any alteration of alignment.%
-  }
-  \field{number}{12}
-  \field{pages}{4477\bibrangedash 4479}
-  \field{title}{Littrow Configuration Tunable External Cavity Diode Laser with
-  Fixed Direction Output Beam}
-  \verb{url}
-  \verb http://link.aip.org/link/?RSI/72/4477/1
-  \endverb
-  \field{volume}{72}
-  \field{journaltitle}{Review of Scientific Instruments}
-  \field{month}{12}
-  \field{year}{2001}
+  \strng{namehash}{MHDARACFVQME1}
+  \strng{fullhash}{MHDARACFVQME1}
+  \field{labelyear}{2010}
+  \field{sortinit}{M}
+  \field{title}{Controlador de posici{\'o}n para un veh{\'\i}culo a{\'e}reo de
+  4 rotores realimentado por GPS.}
+  \field{year}{2010}
 \endentry
 
-\entry{Reference2}{article}{}
-  \name{author}{2}{}{%
+\entry{mendoza2004recomendaciones}{article}{}
+  \name{author}{4}{}{%
     {{}%
-     {Wieman}{W.}%
-     {Carl~E.}{C.~E.}%
+     {Mendoza~Diaz}{M.~D.}%
+     {A}{A}%
      {}{}%
      {}{}}%
     {{}%
-     {Hollberg}{H.}%
-     {Leo}{L.}%
+     {Abarca~Perez}{A.~P.}%
+     {E}{E}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mayoral~Grajeda}{M.~G.}%
+     {EF}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Quintero~Pereda}{Q.~P.}%
+     {FL}{F.}%
      {}{}%
      {}{}}%
   }
-  \keyw{Diode Laser}
-  \strng{namehash}{WCEHL1}
-  \strng{fullhash}{WCEHL1}
-  \field{labelyear}{1991}
-  \field{sortinit}{W}
-  \field{abstract}{%
-  We present a review of the use of diode lasers in atomic physics with an
-  extensive list of references. We discuss the relevant characteristics of
-  diode lasers and explain how to purchase and use them. We also review the
-  various techniques that have been used to control and narrow the spectral
-  outputs of diode lasers. Finally we present a number of examples illustrating
-  the use of diode lasers in atomic physics experiments. Review of Scientific
-  Instruments is copyrighted by The American Institute of Physics.%
+  \strng{namehash}{MDA+1}
+  \strng{fullhash}{MDAAPEMGEQPF1}
+  \field{labelyear}{2004}
+  \field{sortinit}{M}
+  \field{number}{244}
+  \field{title}{Recomendaciones de actualizaci{\'o}n de algunos elementos del
+  proyecto geom{\'e}trico de carreteras.}
+  \field{journaltitle}{Publicaci{\'o}n t{\'e}cnica}
+  \field{year}{2004}
+\endentry
+
+\entry{ronnback2000developement}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {R{\"o}nnb{\"a}ck}{R.}%
+     {Sven}{S.}%
+     {}{}%
+     {}{}}%
   }
-  \field{number}{1}
-  \field{pages}{1\bibrangedash 20}
-  \field{title}{Using Diode Lasers for Atomic Physics}
-  \verb{url}
-  \verb http://link.aip.org/link/?RSI/62/1/1
-  \endverb
-  \field{volume}{62}
-  \field{journaltitle}{Review of Scientific Instruments}
-  \field{month}{01}
-  \field{year}{1991}
+  \strng{namehash}{RS1}
+  \strng{fullhash}{RS1}
+  \field{labelyear}{2000}
+  \field{sortinit}{R}
+  \field{title}{Developement of a INS/GPS navigation loop for an UAV}
+  \field{volume}{81}
+  \field{journaltitle}{Master's thesis}
+  \field{year}{2000}
 \endentry
 
 \lossort
