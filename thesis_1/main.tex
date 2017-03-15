@@ -1,0 +1,307 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.4 (22/11/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[
+11pt, % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+spanish, % ngerman for German
+singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+%liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage{pdfpages}
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+ 
+\usepackage{booktabs}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\usepackage{palatino} % Use the Palatino font by default
+
+\usepackage{placeins} %FloatBarrier
+
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+\addbibresource{example.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	inner=2.5cm, % Inner margin
+	outer=3.8cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{Implementación de un Sistema de Navegación Cinética Satelital para Asistir en el Control de Posición de Vehículos Aéreos No Tripulados} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Dr. Arturo Espinosa Romero \\Dr. Anabel Martín González} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Ingeniero en Computación} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{\textsc{Alex Antonio Turriza Suárez}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{Ingeniería} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{\href{http://www.uady.mx}{Universidad Autónoma de Yucatán}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{\href{http://www.matematicas.uady.mx}{Facultad de Matemáticas}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{\href{http://researchgroup.university.com}{CLIR}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{\href{http://www.matematicas.uady.mx}{Facultad de Matemáticas}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+%\begin{titlepage}
+%\begin{center}
+
+%\vspace*{.06\textheight}
+%{\scshape\LARGE \univname\par}\vspace{1.5cm} % University name
+%\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+
+%\HRule \\[0.4cm] % Horizontal line
+%{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+%\HRule \\[1.5cm] % Horizontal line
+ 
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushleft} \large
+%\emph{Author:}\\
+%\href{http://www.johnsmith.com}{\authorname} % Author name - remove the \href bracket to remove the link
+%\end{flushleft}
+%\end{minipage}
+%\begin{minipage}[t]{0.4\textwidth}
+%\begin{flushright} \large
+%\emph{Supervisor:} \\
+%\href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+%\end{flushright}
+%\end{minipage}\\[3cm]
+ 
+%\vfill
+
+%\large \textit{A thesis submitted in fulfillment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+%\textit{in the}\\[0.4cm]
+%\groupname\\\deptname\\[2cm] % Research group name and department name
+ 
+%\vfill
+
+%{\large \today}\\[4cm] % Date
+%\includegraphics{Logo} % University/department logo - uncomment to place it
+ 
+%\vfill
+%\end{center}
+%\end{titlepage}
+
+\includepdf[pages=-]{../PORTADA}
+
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{declaration}
+\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+\noindent Yo, \authorname, declaro que este trabajo de tesis titulado, \enquote{\ttitle} y los resultados presentados son de mi autoría. Declaro que que:
+
+\begin{itemize} 
+\item Este trabajo fue realizado durante mi estancia como estudiante de la Facultad.
+\item Ninguna parte de esta tesis ha sido previamente presentada para la obtención de un grado u otra promoción en esta Universidad u otra institución.
+\item Todas las consultas a trabajos de otras personas han sido claramente atribuidos a sus respectivos autores.
+\item Donde se hayan realizado citas textuales del trabajo de otras personas, la fuente siempre estará dada. Con la excepción de dichas citas, esta tesis es totalmente mía.
+\end{itemize}
+ 
+\noindent Firma:\\
+\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
+ 
+\noindent Fecha:\\
+\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
+\end{declaration}
+
+\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+\vspace*{0.2\textheight}
+
+\noindent\enquote{\itshape Si quieres hacer una tarta de manzana desde cero, primero debes inventar un universo.}\bigbreak
+
+\hfill Carl Sagan
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+El conocimiento del entorno que nos rodea ha sido tema de interés humano desde antaño, así como la interacción con éste en el día a día, para poder investigar diferentes maneras en cómo se pueden aprovechar los recursos disponibles. Unas herramientas para describir el medio geográfico son los mapas realizados a mano; sin embargo, en lugar de ser una herramienta de exactitud, son sólo una referencia del entorno, dado el gran error derivado de la inexactitud humana en las mediciones.
+
+En el presente trabajo se propone la implementación de un sistema de navegación cinética satelital para vehículos aéreos no tripulados (UAV, por sus siglas en inglés), que sea capaz de proporcionar una precisión muy alta (medible en centímetros) de forma que represente un apoyo en la planeación de rutas y ejecuciones de determinadas tareas cada cierta distancia que permitan la creación de mapas de imágenes aéreas más precisos.
+
+Para alcanzar el objetivo, se trabajará con ayuda de software de procesamiento para RTK, que servirá de apoyo al momento de alcanzar la precisión deseada, además de dispositivos de hardware tales como un par de receptores GPS comunicados de forma inalámbrica, indispensables para implementar una corrección de tipo diferencial.
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+\textit{A mis padres} \textbf{Antonio y Lucy}, aquellos que sin importar las circunstancias me apoyaron de principio a fin en esta odisea de estudiar un nivel superior en una ciudad aparte de donde soy originario. A mi \textit{hermana menor} \textbf{Haydeé Krystel}, quien estaba ahí para poder platicar conmigo y animarme en aquellos momentos donde lo necesité en estos años. Mención especial a mis abuelitos y mis tíos, tías, primos y primas, que siempre me apoyaron y me enseñaron muchas cosas y utilidades de sus vidas. \\
+
+\textit{A mis asesores de tesis}, \textbf{Dr. Arturo Espinosa Romero y Dr. Anabel Martín González}, por la innumerable cantidad de conocimientos transmitidos que me serán de utilidad en el resto de la vida, en futuros retos, y por su infinita paciencia ante mis dudas y adversidades especialmente durante la realización de este trabajo. Mención especial a todos mis profesores, no sólo de la universidad. \\
+
+\textit{A mi grupo de cercanos amigos:} Ernesto[\textbf{Nestor9224}], Kevin[\textbf{Kevan357}], Rafa[\textbf{RFer93}], Oscar[\textbf{MadOsc}], George[\textbf{El Tío}], Beto[\textbf{Ax Owl xA}] por estos años reuniéndonos para despejar la mente con los videojuegos como excusa. Junto conmigo, Alex[\textbf{AlexRT07}] somos \textit{los inútiles}, o mejor dicho, [TeamGG]\textbf{Los Gansos Galácticos}. \\
+
+\textit{A mis compañeros de la carrera} por compartir cada momento no sólo en la estancia en la facultad y hacer de esta experiencia universitaria algo más agradable. \\
+
+\textbf{\textit{\Large Muchas gracias a todos.}}
+
+\end{acknowledgements} 
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the main table of contents
+
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+
+\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere\\
+\textbf{WSF} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or\\
+
+\end{abbreviations}
+
+%----------------------------------------------------------------------------------------
+%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+\begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
+
+% The \SI{}{} command is provided by the siunitx package, see its documentation for instructions on how to use it
+
+Speed of Light & $c_{0}$ & \SI{2.99792458e8}{\meter\per\second} (exact)\\
+%Constant Name & $Symbol$ & $Constant Value$ with units\\
+
+\end{constants}
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+\begin{symbols}{lll} % Include a list of Symbols (a three column table)
+
+$a$ & distance & \si{\meter} \\
+$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
+%Symbol & Name & Unit \\
+
+\addlinespace % Gap to separate the Roman symbols from the Greek
+
+$\omega$ & angular frequency & \si{\radian} \\
+
+\end{symbols}
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\dedicatory{Dedicado a todas aquellas personas que hacen especial mi vida...} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\include{Capitulos/Intro}
+\include{Capitulos/Marco} 
+\include{Capitulos/Metodo}
+\include{Capitulos/Result} 
+\include{Capitulos/Conc} 
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\includepdf[pages=-]{Apendices/nfs}
+\includepdf[pages=-]{Apendices/qemu}
+\includepdf[pages=-]{Apendices/xbeeGuia}
+
+%\include{Apendices/nfs.pdf}
+%\include{Appendices/AppendixB}
+%\include{Appendices/AppendixC}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\printbibliography[heading=bibintoc]
+
+%----------------------------------------------------------------------------------------
+
+\end{document}  
