@@ -53,6 +53,13 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
@@ -141,7 +148,7 @@ headsepline, % Uncomment to get a line under the header
 %\end{titlepage}
 
 \includepdf[pages=-]{../PORTADA}
-
+\afterpage{\blankpage}
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
 %----------------------------------------------------------------------------------------
@@ -164,7 +171,7 @@ headsepline, % Uncomment to get a line under the header
 \rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
 \end{declaration}
 
-\cleardoublepage
+\afterpage{\blankpage}
 
 %----------------------------------------------------------------------------------------
 %	QUOTATION PAGE
@@ -188,6 +195,8 @@ En el presente trabajo se propone la implementación de un sistema de navegació
 
 Para alcanzar el objetivo, se trabajará con ayuda de software de procesamiento para RTK, que servirá de apoyo al momento de alcanzar la precisión deseada, además de dispositivos de hardware tales como un par de receptores GPS comunicados de forma inalámbrica, indispensables para implementar una corrección de tipo diferencial.
 \end{abstract}
+
+\afterpage{\blankpage}
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
