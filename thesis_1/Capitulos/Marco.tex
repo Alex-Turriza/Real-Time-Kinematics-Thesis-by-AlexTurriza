@@ -19,13 +19,28 @@
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.075]{Figures/GPS}
+\includegraphics[scale=0.07]{Figures/GPS}
 \caption[Sistema de Posicionamiento Global.]{Sistema de Posicionamiento Global.}
 \label{fig:GPS}
 \end{figure}
 
-GPS fue iniciado en 1973 para su uso con fines militares por los Estados Unidos de Norteamérica. Su objetivo principal es la determinación de las coordenadas espaciales bajo una referencia mundial. Para dichos propósitos, se necesita una recepción de señales de un mínimo de cuatro satélites, cuyas coordenadas son plenamente conocidas
-\textbf{[Huerta, E.; Mangiaterra, A.; Noguera, G. 2005]}.
+GPS fue iniciado en 1973 para su uso con fines militares por los Estados Unidos de Norteamérica. Su objetivo principal es la determinación de las coordenadas espaciales bajo una referencia mundial. Para dichos propósitos, se necesita una recepción de señales de un mínimo de cuatro satélites, cuyas coordenadas son plenamente conocidas \cite{huerta2005gps}.
+
+\subsection{Historia}
+
+\subsubsection{Antecedentes}
+Antes de que GPS funcionara mediante satélites, ya estaban implementados varios sistemas de localización radio-terrestres. Uno de ellos era conocido como LORAN (\textit{Long Range Navigation}, Navegación de largo alcance por sus siglas en inglés). Se fundamentaba por el envío de una señal desde distintos emisores. Al percibir señal de tres distintos emisores, podía determinar su posición. \\
+
+Fue tras el lanzamiento del Sputnik\footnotemark, que investigadores norteamericanos descubrieron que era posible la determinación de la posición gracias a la deformación de una señal por efecto Doppler. Así, si era posible conocer la posición del satélite conociendo la posición del observador en la Tierra, a la inversa, sería posible conocer la posición de un observador conociendo la posición del satélite.
+
+\footnotetext{Satélite ruso, el primero de la historia.}
+
+\subsubsection{Con satélites en órbita}
+El primer sistema que utilizaba la triangulación mediante satélites fue \textit{TRANSIT} en 1960, entrando en operaciones hasta 1965. Constaba de seis satélites en seis planos, contando con cobertura mundial. \\
+
+Requería que el observador realizara un seguimiento de 15 minutos a la constelación satelital, pudiendo acceder a ellos cada hora y media. Su error de precisión rondaba los 250 metros.\\
+
+En 1973 se propuso el \textit{DNSS} (Defense Navigation Satellite System, Sistema de Navegación Satelital de Defensa por sus siglas en inglés), cambiando de nombre a \textit{NAVSTAR} (Navigation System Time and Ranging, Sistema de Navegación por Tiempo y Distancia, por sus siglas en inglés), después a \textit{NAVSTAR-GPS} y finalmente a \textit{GPS} \cite{termal2014prototipo}.
 
 \subsection{La constelación NAVSTAR}
 
@@ -36,15 +51,62 @@ GPS fue iniciado en 1973 para su uso con fines militares por los Estados Unidos 
 \label{fig:NAV}
 \end{figure}
 
-La constelación NAVSTAR está conformada por los satélites que se utilizan para triangular la posición. Se propuso que fueran 24 satélites situados en seis planos de cuatro satélites cada uno con cobertura en toda la Tierra. \\
+La constelación \textit{NAVSTAR} está conformada por los satélites que se utilizan para triangular la posición. Se propuso que fueran 24 satélites situados en seis planos de cuatro satélites cada uno, con cobertura en toda la Tierra. \\
 
-En 1983, el presidente Ronald Reagan permitió el uso civil del sistema, no sin antes añadir un error (llamado \textit{Disponibilidad Selectiva}) para evitar que fuese tan preciso. \\
+La constelación ha sido lanzada en conjuntos llamados \textit{Blocks} (bloques en inglés), distribuidos de la siguiente manera.
 
-En el año 2000, el presidente Bill Clinton retiró el error intencionado \textbf{[Zambrano Termal, Jhon. 2014]}.
+\begin{itemize}
+	\item Block I (1978 - 1985): 11 satélites lanzados, \textcolor{green}{10 puestos en órbita con éxito}.
+	\item Block II (1989 - 1990): \textcolor{green}{9 satélites puestos en órbita con éxito}.
+	\item Block IIA (1990 - 1997): \textcolor{green}{19 satélites lanzados con éxito}.
+	\item Block IIR (1997 - 2004): 11 satélites lanzados, \textcolor{green}{12 satélites lanzados con éxito}.
+	\item Block IIR-M (2005 - 2009): \textcolor{green}{8 satélites lanzados con éxito}.
+	\item Block IIF (2010): \textcolor{green}{1 satélite lanzado con éxito} \citep{termal2014prototipo}
+\end{itemize}
+
+\subsection{Estructura}
+
+GPS está conformado por tres segmentos:
+
+\begin{itemize}
+	\item Segmento espacial: los satélites.
+	\item Segmento de control: estaciones terrestres.
+	\item Segmento de usuario: los receptores.
+\end{itemize}
+	
+\subsubsection{Segmento espacial}
+
+Se conoce como segmento espacial al sistema de satélites que orbitan al planeta Tierra, emitiendo señales que permiten al receptor calcular su posición en el marco de referencia terrestre. \\
+
+Se reparten en seis órbitas sincronizadas y se desplazan a una altitud de 20'000 Km. Cada uno de ellos dan una vuelta a la Tierra en 12 horas. \\
+
+Los satélites son ajustados mediante mensajes NAV enviados desde el segmento de control.
+
+\subsubsection{Segmento de control}
+
+Conjunto de sistemas instalados en la Tierra que permiten el funcionamiento óptimo del segmento espacial.
+
+Conformada por 12 estaciones, de las cuales la principal \textit{MCS} (Master Control Station, Estación de Control Principal por sus siglas en inglés) se encuentra en Colorado, en la Base Schriever de la Fuerza Aérea.	
+
+Tras el envío de nueva información, cada satélite sincroniza su reloj atómico y ajusta las efemérides de su órbita. El cálculo de esta última es a través de un filtro de Kalman, permitiendo una estimación precisa a pesar de múltiples factores externos.
+
+\subsubsection{Segmento de usuario}
+
+Conformado por equipos receptores diseñados para recibir, decodificar y procesar las señales de los satélites. Los parámetros para controlar la calidad de los receptores utilizados son los siguientes:
+
+\begin{itemize}
+	\item La antena debe estar bajo cielo abierto recibiendo la señal de los satélites con suficiente potencia.
+	\item El reloj interno del receptor debe mantener la sincronización entre receptor y satélites.
+	\item El número de canales debe habilitar al receptor para sintonizar un número suficiente de señales.
+	\item El procesador debe tener una frecuencia tal que garantice un cálculo correcto de la posición a partir de las señales captadas.	
+\end{itemize}
+
+\cite{termal2014prototipo}
 
 \subsection{Dispositivos GPS}
-Los dispositivos GPS son aparatos que obtienen la información de los satélites y realizan un procesamiento del mismo para ubicarse en el marco de referencia terrestre. \\
+Los dispositivos GPS son aparatos receptores que obtienen la información de los satélites y realizan un procesamiento del mismo para ubicarse en el marco de referencia terrestre. \\
 
+\newpage
 Existen GPS de distintos tamaños y marcas.
 
 \begin{table}[!htb]
@@ -82,7 +144,7 @@ Existen GPS de distintos tamaños y marcas.
 	\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{Ublox C94 M8P GPS}\\
 	\hline
 	%\begin{figure}[H] % Example image
-	      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \includegraphics[width=0.37\linewidth]{Figures/ublox}\footnotemark
+	      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \includegraphics[width=0.25\linewidth]{Figures/ublox}\footnotemark
 	%\caption{GPS Ublox. \footnotemark}
 	\label{fig:ubx} \\
 	%\end{figure} \\
@@ -109,6 +171,12 @@ Existen GPS de distintos tamaños y marcas.
 
 \subsection{Fundamento matemático}
 
+Aquí irá el texto mareador contenido en el Aided Navigation donde se de un breve fundamento del funcionamiento.\\
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere vitae ex quis blandit. In eu libero ante. Maecenas tempus, massa eget convallis sagittis, ligula nisl lobortis lectus, nec efficitur ligula velit non enim. Curabitur iaculis consequat vehicula. Donec tempus sapien laoreet eros hendrerit, quis sodales leo porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tincidunt elementum elementum. Donec viverra condimentum vulputate. Cras eget arcu ac odio facilisis convallis. Donec et est eget ipsum aliquet ultrices.
+
+Aliquam egestas a elit a hendrerit. Quisque finibus, quam non faucibus porta, nulla libero blandit elit, in dignissim mauris nulla a erat. Fusce eget massa ac arcu dictum fermentum. Vestibulum iaculis vel nibh eu elementum. Morbi laoreet, metus ut dignissim dictum, risus sem euismod nunc, sed laoreet urna tellus sit amet elit. Nam lectus nisl, interdum sit amet metus at, malesuada imperdiet erat. Sed hendrerit fermentum pretium. Nulla lacinia elementum leo, a vulputate libero congue et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
 \subsection{Causas de error}
 
 Como en todo sistema de medición, es probable que un cálculo de una posición se vea afectado por cualquiera de las siguientes: 
@@ -122,7 +190,7 @@ Como en todo sistema de medición, es probable que un cálculo de una posición 
 
 \subsubsection{Error causado por el satélite}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \centering
 \includegraphics[scale=0.23]{Figures/Sat}
 \caption[Error del reloj atómico satelital.]{Error del reloj atómico satelital.}
@@ -135,7 +203,7 @@ También, al error en la posición de los satélites sobre sus órbitas se le at
 
 \subsubsection{Error causado por la atmósfera}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \centering
 \includegraphics[scale=0.48]{Figures/CapasAtm}
 \caption[Error por capas de la Atmósfera.]{Error por capas de la Atmósfera.}
@@ -150,7 +218,7 @@ El error en distancia atribuible a esta etapa es de 4 metros.
 
 \subsubsection{Error causado por rutas múltiples}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \centering
 \includegraphics{Figures/RutasMult}
 \caption[Error por rutas múltiples.]{Error por rutas múltiples.}
@@ -169,18 +237,24 @@ Las nuevas antenas exteriores pueden filtrar este efecto.
 
 Así como los satélites, los receptores cuentan con sus propios relojes. Debido a costos y dimensiones, éstos no pueden ser atómicos y por tanto son menos exactos, siendo otra fuente de error en la medición.\\
 
-El error asociado a esta causa suele ser de 0.5 metros \textbf{[Fallas, 2002]}.
+El error asociado a esta causa suele ser de 0.5 metros \cite{fallas2002sistema}.
 
 \subsubsection{Error por Disponibilidad Selectiva}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \centering
 \includegraphics[scale=0.30]{Figures/RonaldReagan}
-\caption[Error por Disponibilidad Selectiva.]{Error por Disponibilidad Selectiva.}
+\caption[Presidente Ronald Reagan.]{Presidente Ronald Reagan.}
 \label{fig:ErrDis}
 \end{figure}
 
------ de Zambrano Thermal...
+GPS nació siendo un proyecto de tipo militar. Tras liberarse para uso civil en 1983 por autorización del presidente Ronald Reagan, se habilitaron dos secuencias codificadas llamadas códigos: C/A para uso civil y P para uso militar, con mayor precisión. \\
+
+En el código C/A, se habilitó un error intencionado para evitar un alto grado de precisión, conocido como \textit{Disponibilidad Selectiva}. El presidente Bill Clinton ordenó eliminarle en el año 2000. de \cite{termal2014prototipo}.
+
+GPS actualmente mantiene incorporada la opción de disponibilidad selectiva, cuyo error ronda los 100 metros, en caso de que el gobierno de Estados Unidos desee rehabilitarlo. \\
+
+En 2007, el presidente de Estados Unidos anunción que los satélites de los bloques III no incorporarían más dicha opción \cite{chafer2017diseno}.
 
 \section{Comunicación inalámbrica}
 
@@ -197,11 +271,14 @@ En los aparatos electrónicos, se suelen usar ondas de radiofrecuencia, que a su
 
 A menor frecuencia, se obtiene una gran cobertura pero la capacidad se ve mermada. Conforme se aumenta la frecuencia, se pierde capacidad de cobertura pero la carga que puede tener una banda, aumenta. Se dice entonces que es una relación inversamente proporcional.\\
 
-Actualmente no existe algún organismo internacional que regule las frecuencias utilizadas...
+Actualmente no existe algún organismo internacional que regule las frecuencias utilizadas por los dispositivos de comunicación inalámbrica, por lo que cada país ha de adoptar una regulación propia. En Estados Unidos es la \textit{FCC} (Federal Communications Commission, Comisión Federal de Comunicaciones, por sus siglas en inglés) quien determina dichas regulaciones. Otras organizaciones reguladoras son la \textit{ISO} (International Organization for Standardization, Organización Internacional para la Estandarización, por sus siglas en inglés) y la \textit{EPCglobal}.
+
+La clasificación del uso de las frecuencias por zona geográfica se muestra en la tabla \ref{Tab:BandasFreq}.
 
 \begin{table}[!htb]
 \begin{center}
 \caption{Bandas de frecuencia en comunicación inalámbrica.}
+\label{Tab:BandasFreq}
 \begin{tabular}{|l|l|l|l|l|}
 	\hline
 	\textbf{País/Región} & \textbf{LF} & \textbf{HF} & \textbf{UHF} & \textbf{Microondas}\\
@@ -218,7 +295,7 @@ Actualmente no existe algún organismo internacional que regule las frecuencias 
 \end{center}
 \end{table}
 
-Continuar choro de Tapia, D. I., Cueli, J. R., García, Ó., Corchado, J. M., Bajo, J., \& Saavedra, A. (2007). Identificacion por radiofrecuencia: fundamentos y aplicaciones. Proceedings de las primeras Jornadas Científicas sobre RFID. Ciudad Real, Spain, 1-5.
+Tanto los sistemas LF y HF son para libre uso en todo el planeta. Sin embargo, UHF necesita de autorización y certificación dependiendo de la zona. En EUA, el uso de UHF no requiere de licencia, pero tiene algunas restricciones \cite{tapia2007identificacion}
 
 \subsection{Protocolo ZigBee}
 
@@ -233,7 +310,7 @@ El estándar IEEE 802.15.4, mejor conocido como ZigBee, es una especificación p
 
 Los módulos XBEE, fabricados por Digi International siguen el protocolo ZigBee. De entre todos esos módulos, destacan los de la serie PRO, ya que poseen una mayor potencia en la señal y en consecuencia, pueden hasta duplicar la capacidad de alcance en la distancia de transmisión. \\
 
-El módulo requiere una alimentación que va desde los 2.8 V hasta los 3.4 V.
+El módulo requiere una alimentación que va desde los 2.8 V hasta los 3.4 V \cite{oyarce2010guia}.
 
 \subsection{Módulo UHF del Ublox C94-M8P GPS}
 
@@ -245,7 +322,7 @@ En él, se puede configurar el envío y recepción de diferentes contenidos. El 
 
 Los Sistemas Embebidos son sistemas programables, que realizan tareas específicas determinadas por el usuario, con el objetivo de optimizar los procesos para mejorar su desempeño y eficiencia, reduciendo tamaño y costos de producción. \\
 
-Se caracterizan por el bajo consumo de energía. Está compuesto por tres componentes principales: Procesador, Dispositivos de almacenamiento y Periféricos [Caballero Paz, Andrés. 2014].
+Se caracterizan por el bajo consumo de energía. Está compuesto por tres componentes principales: Procesador, Dispositivos de almacenamiento y Periféricos \cite{caballero2014desarrollo}.
 
 \subsection{BeagleBone Black}
 
@@ -253,18 +330,18 @@ Se caracterizan por el bajo consumo de energía. Está compuesto por tres compon
 \centering
 \includegraphics[scale=0.18]{Figures/BeagleBoneBlack}
 \caption[BeagleBone Black.]{BeagleBone Black.}
-\label{fig:ErrSat}
+\label{fig:BBlack}
 \end{figure}
 
 La BeagleBone es una plataforma de desarrollo de bajo costo. \\
 
 Desarrollada por la BeagleBone Foundation de los Estados Unidos, una fundación sin ánimos de lucro, cuyo objetivo es la promoción de hardware y software de código abierto para el desarrollo de sistemas embebidos. \\
 
-Por su diseño, posee una arquitectura ARM, que posee soporte de varias distribuciones Linux [Coronado Vallés, Jorge. 2014]. \\
+Por su diseño, posee una arquitectura ARM, que posee soporte de varias distribuciones Linux \cite{coronado2014desarrollo}. \\
 
 Por su condición de hardware y software abierto, tanto sus esquemáticos del hardware, como las códigos fuente de su software están disponibles a todos los usuarios. \\
 
-De las ventajas que posee una arquitectura como la del BeagleBone, basada en microprocesadores, es que su uso conduce a plataformas más poderosas, capaces de realizar tareas de gran carga computacional [Coley, Gerald. 2013].
+De las ventajas que posee una arquitectura como la del BeagleBone, basada en microprocesadores, es que su uso conduce a plataformas más poderosas, capaces de realizar tareas de gran carga computacional \cite{coley2013beaglebone}.
 
 \section{Real Time Kinematics}
 
@@ -281,9 +358,9 @@ Todo está en torno al siguiente supuesto: \\
 
 Se tienen dos receptores a una distancia de pocos km entre sí. En esta condición, se podría esperar que los errores causados por el reloj atómico del satélite, por la ionósfera y la tropósfera afectarían de igual manera y con la misma magnitud a ambos receptores, por su proximidad. Si la posición exacta de uno de los receptores es conocida, entonces esta información puede ser usada para determinar el error asociado a las lecturas de dicho receptor y después aplicar la corrección al otro dispositivo. \\
 
-Al GPS cuya posición es conocida recibe el nombre de \textbf{receptor base} y el segundo es llamado \textbf{receptor móvil}. La estación base calcula la distancia entre cada uno de los satélites de los que recibe señal y su posición (también conocida) para determinar el error asociado a la medición de distancia. Esa información la envía al receptor móvil, quien aplica la corrección hacia dicho satélite, obteniendo así un conocimiento más exacto sobre su posición [Fallas, 2002]. \\
+Al GPS cuya posición es conocida recibe el nombre de \textbf{receptor base} y el segundo es llamado \textbf{receptor móvil}. La estación base calcula la distancia entre cada uno de los satélites de los que recibe señal y su posición (también conocida) para determinar el error asociado a la medición de distancia. Esa información la envía al receptor móvil, quien aplica la corrección hacia dicho satélite, obteniendo así un conocimiento más exacto sobre su posición \cite{fallas2002sistema}. \\
 
-Con todas las correcciones aplicadas de forma ideal, se alcanza una precisión mejor a los 10 cm [Cerrato Miranda, Javier. 2011].
+Con todas las correcciones aplicadas de forma ideal, se alcanza una precisión mejor a los 10 cm \cite{cerrato2011diseno}.
 
 \section{Formato RTCM3}
 
@@ -310,6 +387,23 @@ El mensaje contendrá los siguientes datos: \\
 
 \section{RTKLIB}
 
-Desarrollado por Tomoji Takasu, RTKLIB es un paquete de programas de código abierto para posicionamiento tanto estándar como preciso. Soporta varios modos de posicionamiento tales como: Simple, Diferencial, Cinemático, entre otros. \\
+Desarrollado por Tomoji Takasu, RTKLIB es un paquete de programas de código abierto escrito en C, para posicionamiento tanto estándar como preciso con sistemas de bajo costo. Soporta varios modos de posicionamiento tales como: Simple, Diferencial, Cinemático, entre otros. \\
 
-En todos sus modos soporta tanto procesamiento en tiempo real así como postprocesamiento.
+En todos sus modos soporta tanto procesamiento en tiempo real así como postprocesamiento\cite{takasu2009development}.
+
+\subsection{Modos de funcionamiento}
+
+RTKLIB puede funcionar en distintos modos. Se explicarán un par de ellos en conformidad con su relevancia en este proyecto:
+
+\begin{itemize}
+\item Modo estático.
+\item Modo cinemático.
+\end{itemize}
+
+RTKLIB utiliza un filtro de Kalman extendido (\textit{EKF}, extended Kalman filter, por sus siglas en inglés), para obtener los resultados de sus cálculos de aproximación. 
+
+\subsubsection{Modo estático}
+En este modo es necesaria una larga observación del cielo y de recolección de datos. Este requisito está fundamentado dado el cambio en la geometría del trayecto de los satélites, que apoyan en la resolución de ambigüedades\cite{wisniewski2013evaluation}.
+
+\subsubsection{Modo cinemático}
+Requerido cuando el objeto al que se quiere conocer su posición, se encuentra en movimiento. Permite obtener decímetros de precisión. Para un funcionamiento óptimo, necesita las coordenadas de una estación base conocida en el archivo de configuración. Los datos de esta estación fija pueden ser obtenidos mediante mensajes RTCM\cite{wisniewski2013evaluation}.
