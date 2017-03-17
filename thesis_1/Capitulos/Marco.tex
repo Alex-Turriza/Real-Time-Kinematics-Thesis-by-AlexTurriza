@@ -15,6 +15,14 @@
 
 %----------------------------------------------------------------------------------------
 
+\section{Introducción}
+
+En esta sección se presentará...
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed dui nec metus venenatis semper ac at felis. Vestibulum quis ultrices turpis, eu pellentesque ipsum. Suspendisse ultricies id tortor sit amet euismod. Curabitur lacus nisi, posuere ac pharetra eget, volutpat a neque. Nunc id ipsum non justo dapibus porta accumsan sit amet leo. Nulla facilisi. In pellentesque diam ullamcorper enim feugiat euismod. Phasellus aliquet leo at risus ullamcorper, a sodales nulla feugiat. Vivamus ultrices nunc eleifend dolor ullamcorper rhoncus. \\
+
+Maecenas rutrum, odio eu molestie ullamcorper, ligula ipsum pulvinar quam, non ullamcorper lorem erat eget nisl. Praesent ornare maximus velit, sed aliquet justo. Pellentesque et tempus nunc, sagittis sollicitudin lacus. In sed placerat lacus. In vitae orci sit amet augue interdum iaculis. Donec elementum turpis purus, eget finibus neque sodales et. Fusce vitae justo venenatis, vestibulum erat non, lacinia magna. 
+
 \section{El sistema de Posicionamiento Global - GPS}
 
 \begin{figure}[ht]
@@ -362,18 +370,38 @@ Al GPS cuya posición es conocida recibe el nombre de \textbf{receptor base} y e
 
 Con todas las correcciones aplicadas de forma ideal, se alcanza una precisión mejor a los 10 cm \cite{cerrato2011diseno}.
 
-\section{Formato RTCM3}
+\section{Formato RTCM-3}
 
 Este formato es un estándar internacional para transmitir datos de posicionamiento en tiempo real. \\
 
-El mensaje contendrá los siguientes datos: \\
+Es utilizado sólo por las estaciones base para proporcionar sus observaciones. \\
+
+Su estructura consiste en un mensaje de 42 bits fijos más otros bits que pueden variar de acuerdo al o los mensajes que se requiera enviar, como muestra la tabla \ref{Tab:RTCM-Struct}\cite{rubinov2011review}.\\
 
 \begin{table}[!htb]
 \begin{center}
-\caption{Contenido del mensaje en formato RTCM3.1}
+\caption{Estructura del mensaje RTCM-3.}
+\label{Tab:RTCM-Struct}
+\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	\textbf{Preámbulo} & \textbf{Reservado} & \textbf{\small Tamaño del mensaje} & \textbf{\small Datos del mensaje} & \textbf{Checksum}\\
+	\hline
+	8 bits & 6 bits & 10 bits & n bits & 24 bits \\
+	\hline
+	0xD3 & \parbox[t]{1.9cm}{Sin definir} & \parbox[t]{2.9cm}{Tamaño del mensaje en bytes} & \parbox[t]{2.9cm}{Tamaño variable en bytes} & \parbox[t]{2.05cm}{Definición QualComm CRC-24Q}\\
+	\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+El mensaje utilizado en este trabajo contendrá los siguientes datos: \\
+
+\begin{table}[!htb]
+\begin{center}
+\caption{Contenido del mensaje en formato RTCM-3.1}
 \begin{tabular}{|l|}
 	\hline
-	\textbf{Mensaje RTCM3.1}\\
+	\textbf{Mensaje RTCM-3.1}\\
 	\hline
 	\tabitem \textbf{1005:} (X,Y,Z) Coordenadas fijas de la antena. \\
 	\tabitem \textbf{1077:} Observaciones de GPS. \\
@@ -407,3 +435,11 @@ En este modo es necesaria una larga observación del cielo y de recolección de 
 
 \subsubsection{Modo cinemático}
 Requerido cuando el objeto al que se quiere conocer su posición, se encuentra en movimiento. Permite obtener decímetros de precisión. Para un funcionamiento óptimo, necesita las coordenadas de una estación base conocida en el archivo de configuración. Los datos de esta estación fija pueden ser obtenidos mediante mensajes RTCM\cite{wisniewski2013evaluation}.
+
+\section{Conclusión}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed dui nec metus venenatis semper ac at felis. Vestibulum quis ultrices turpis, eu pellentesque ipsum. Suspendisse ultricies id tortor sit amet euismod. Curabitur lacus nisi, posuere ac pharetra eget, volutpat a neque. Nunc id ipsum non justo dapibus porta accumsan sit amet leo. Nulla facilisi. In pellentesque diam ullamcorper enim feugiat euismod. Phasellus aliquet leo at risus ullamcorper, a sodales nulla feugiat. Vivamus ultrices nunc eleifend dolor ullamcorper rhoncus. \\
+
+Maecenas rutrum, odio eu molestie ullamcorper, ligula ipsum pulvinar quam, non ullamcorper lorem erat eget nisl. Praesent ornare maximus velit, sed aliquet justo. Pellentesque et tempus nunc, sagittis sollicitudin lacus. In sed placerat lacus. In vitae orci sit amet augue interdum iaculis. Donec elementum turpis purus, eget finibus neque sodales et. Fusce vitae justo venenatis, vestibulum erat non, lacinia magna. \\
+
+En el capítulo \ref{Chap:DisHard}, se presentarán Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed dui nec metus venenatis semper ac at felis. Vestibulum quis ultrices turpis, eu pellentesque ipsum. Suspendisse ultricies id tortor sit amet euismod. Curabitur lacus nisi, posuere ac pharetra eget, volutpat a neque. Nunc id ipsum non justo dapibus porta accumsan sit amet leo. Nulla facilisi. In pellentesque diam ullamcorper enim feugiat euismod. Phasellus aliquet leo at risus ullamcorper, a sodales nulla feugiat. Vivamus ultrices nunc eleifend dolor ullamcorper rhoncus.
