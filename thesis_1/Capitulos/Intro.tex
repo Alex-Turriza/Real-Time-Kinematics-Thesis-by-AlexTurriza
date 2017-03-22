@@ -2,7 +2,7 @@
 
 \chapter{Introducción} % Main chapter title
 
-\label{chap:Intro} % For referencing the chapter elsewhere, use \ref{Intr} 
+\label{Chap:Intro} % For referencing the chapter elsewhere, use \ref{Intr} 
 
 %----------------------------------------------------------------------------------------
 
@@ -14,6 +14,24 @@
 \newcommand{\option}[1]{\texttt{\itshape#1}}
 
 %----------------------------------------------------------------------------------------
+
+\section{Preliminares}
+En este documento de tesis se presenta la implementación de un sistema de navegación RTK (Real-Time Kinematics, Sistema de Navegación en Tiempo Real) con el apoyo del software RTKLIB en una BeagleBone Black, basándose en \cite{takasu2009development}, para poder realizar control sobre la posición de un aparato que esté en constante movimiento.
+
+\subsection{Descripción del documento}
+
+El presente trabajo se dividirá en las siguientes secciones: 
+
+\begin{itemize}
+\item \textbf{Introducción:} Se describen tanto la importancia del tema, los problemas a resolver, estado del arte, y una lista de objetivos a seguir durante el desarrollo del tema.\\
+\item \textbf{Marco Teórico:} En este apartado se sientan las bases de funcionamiento de los dispositivos a utilizar, así como información útil acerca de los mismos. Se da una descripción general tanto del hardware como del software utilizado.\\
+\item \textbf{Diseño del Hardware y Software:} En esta sección se enlistan diversos recursos implementados en el trabajo, tanto de software como de hardware. Se da una descripción de cada uno y el aporte que tienen a la estructura final durante el funcionamiento.\\
+\item \textbf{Diseño del Experimento:} Se describen las condiciones a las que será sometido el prototipo para indicar un adecuado funcionamiento de acuerdo a los objetivos listados en la introducción.\\
+\item \textbf{Análisis de Resultados:} Se realiza una evaluación de los resultados obtenidos durante la ejecución de la rutina experimental. Se enfatizan diferencias de los distintos modos de funcionamiento y su impacto en el rendimiento del sistema.\\
+\item \textbf{Conclusiones:} En forma de síntesis, se da un resumen de los resultados obtenidos de acuerdo al modo de funcionamiento, las observaciones  y el rendimiento en general del sistema.\\
+\end{itemize}
+
+Además, al final se añade una sección de anexos en donde se adjuntan guías de configuración o programación de distintos dispositivos de hardware o de software necesarios para la reproducción del proyecto. 
 
 \section{Importancia del tema}
 El conocimiento del medio ha sido tema de interés humano desde antaño. Lo que nos rodea, cómo se interactúa con ello en el día a día, así como poder investigar diferentes maneras en cómo se pueden aprovechar los recursos disponibles. \\
@@ -58,16 +76,8 @@ El objetivo general de este trabajo es el diseño y la implementación de un sis
 	\item Evaluación de los datos obtenidos.    
 \end{itemize}
 
-\section{Descripción del documento}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat massa vitae mi viverra euismod. Cras tincidunt convallis urna nec pharetra. Duis bibendum vestibulum lectus sit amet dignissim. Vestibulum congue tincidunt vulputate. Nunc vel finibus felis. Nullam tristique id nisl non scelerisque. Cras lorem dolor, mollis vitae consectetur id, blandit eu nibh. Aenean feugiat commodo elit, in efficitur augue scelerisque sed. Nunc iaculis nibh sed dui faucibus, eget dictum elit cursus. \\
-
-Phasellus imperdiet dapibus sapien, non aliquet sem finibus a. Aenean ut pellentesque lacus. Sed porta ante purus, ut convallis justo convallis vitae. Ut at neque mollis, tempus elit at, maximus lorem. Praesent et massa ligula. Morbi malesuada justo augue, ac sollicitudin elit iaculis sed. Aenean porttitor mi et mattis commodo. Integer efficitur est vel diam imperdiet, vitae tempus ante maximus. Praesent auctor, risus porta tincidunt mattis, sem dolor blandit lacus, id suscipit lacus diam ac nibh. Sed eu turpis scelerisque, porta dui in, laoreet nisi. Phasellus tincidunt varius vulputate. Pellentesque euismod lectus urna, id eleifend neque faucibus non. Curabitur tincidunt condimentum congue. Sed magna massa, imperdiet sit amet tellus at, sodales sollicitudin velit. \\
-
-Mauris placerat lacinia metus ac laoreet. Proin imperdiet vestibulum lorem vitae imperdiet. Mauris in est ac diam vehicula elementum. Fusce euismod convallis quam, interdum gravida neque efficitur sed. Suspendisse volutpat, turpis non mollis porta, odio risus maximus dui, et blandit lorem nibh ut dolor. Aenean fringilla est id magna viverra cursus. Nullam aliquam ante sed mi laoreet sodales. Fusce vel elit facilisis, bibendum ex vitae, pulvinar ante. \\
-
 \section{Conclusiones}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat massa vitae mi viverra euismod. Cras tincidunt convallis urna nec pharetra. Duis bibendum vestibulum lectus sit amet dignissim. Vestibulum congue tincidunt vulputate. Nunc vel finibus felis. Nullam tristique id nisl non scelerisque. Cras lorem dolor, mollis vitae consectetur id, blandit eu nibh. Aenean feugiat commodo elit, in efficitur augue scelerisque sed. Nunc iaculis nibh sed dui faucibus, eget dictum elit cursus. \\
+Un sistema de localización de alta precisión incluso para objetivos móviles tiene un alto potencial dadas las posibles aplicaciones. Como un sensor en un sistema de control, GPS posee un error muy grande para emplearse en trabajos que requieran exactitud y estabilidad, como la toma de fotografías aéreas. Mediante corrección diferencial de tipo Real-Time Kinematics, se puede reducir dicha incertidumbre a niveles de escasos decímetros. El objetivo de este trabajo es el de implementar dicha corrección en un sistema móvil controlado por una BeagleBone Black.\\
 
-En la siguiente sección, se expone la teoría que se encuentra detrás de la metodología implementada en el proyecto de tesis, partiendo desde la definición de un sistema GPS, pasando por su modo de funcionamiento y las principales causas de error en sus mediciones. También, se presenta una breve descripción del funcionamiento de una comunicación inalámbrica, del software y del hardware utilizado.
+En el capítulo \ref{Chap:Marco}, se expone la teoría que se encuentra detrás de la metodología implementada en el proyecto de tesis, partiendo desde la definición de un sistema GPS, pasando por su modo de funcionamiento y las principales causas de error en sus mediciones. También, se presenta una breve descripción del funcionamiento de una comunicación inalámbrica, del software y del hardware utilizado.
