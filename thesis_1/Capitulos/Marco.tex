@@ -24,9 +24,11 @@ En esta sección se presenta la teoría de varios elementos clave en el prototip
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.07]{Figures/GPS}
-\caption[Sistema de Posicionamiento Global.]{Sistema de Posicionamiento Global.}
+\caption[Sistema de Posicionamiento Global.]{Sistema de Posicionamiento Global.\footnotemark}
 \label{fig:GPS}
 \end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/NDrive_GPS.jpg/1280px-NDrive_GPS.jpg}{https://upload.wikimedia.org/}}
 
 GPS fue iniciado en 1973 para su uso con fines militares por los Estados Unidos de Norteamérica. Su objetivo principal es la determinación de las coordenadas espaciales bajo una referencia mundial. Para dichos propósitos, se necesita una recepción de señales de un mínimo de cuatro satélites, cuyas coordenadas son plenamente conocidas \cite{huerta2005gps}.
 
@@ -51,9 +53,11 @@ En 1973 se propuso el \textit{DNSS} (Defense Navigation Satellite System, Sistem
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.29]{Figures/Navstar}
-\caption[Satélite de la constelación NAVSTAR.]{Satélite de la constelación NAVSTAR.}
+\caption[Satélite de la constelación NAVSTAR.]{Satélite de la constelación NAVSTAR\footnotemark.}
 \label{fig:NAV}
 \end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Navstar-2F.jpg/613px-Navstar-2F.jpg}{https://upload.wikimedia.org/}}
 
 La constelación \textit{NAVSTAR} está conformada por los satélites que se utilizan para triangular la posición. Se propuso que fueran 24 satélites situados en seis planos de cuatro satélites cada uno, con cobertura en toda la Tierra. \\
 
@@ -102,10 +106,10 @@ Conformado por equipos receptores diseñados para recibir, decodificar y procesa
 	\item La antena debe estar bajo cielo abierto recibiendo la señal de los satélites con suficiente potencia.
 	\item El reloj interno del receptor debe mantener la sincronización entre receptor y satélites.
 	\item El número de canales debe habilitar al receptor para sintonizar un número suficiente de señales.
-	\item El procesador debe tener una frecuencia tal que garantice un cálculo correcto de la posición a partir de las señales captadas.	
+	\item El procesador debe tener una frecuencia tal que garantice un cálculo correcto de la posición a partir de las señales captadas \cite{termal2014prototipo}.	
 \end{itemize}
 
-\cite{termal2014prototipo}
+El segmento espacial y el segmento de usuario están conectadas por dos frecuencias inalámbricas: \textbf{L1} y \textbf{L2}. La primera es de 1575.42 MHz y la segunda de 1227.60 MHz\cite{farrell2008aided}.
 
 \subsection{Dispositivos GPS}
 Los dispositivos GPS son aparatos receptores que obtienen la información de los satélites y realizan un procesamiento del mismo para ubicarse en el marco de referencia terrestre. \\
@@ -144,7 +148,7 @@ Existen GPS de distintos tamaños y marcas.
 \caption{Características del GPS Ublox C94 M8P.}
 \begin{tabular}{|l|}
 	\hline
-	\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{Ublox C94 M8P GPS}\\
+	\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{Ublox C94 M8P GPS}\\
 	\hline
 	%\begin{figure}[H] % Example image
 	      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \includegraphics[width=0.25\linewidth]{Figures/ublox}\footnotemark
@@ -174,11 +178,129 @@ Existen GPS de distintos tamaños y marcas.
 
 \subsection{Fundamento matemático}
 
-Aquí irá el texto mareador contenido en el Aided Navigation donde se de un breve fundamento del funcionamiento.\\
+A través de las frecuencias L1 y L2, el segmento espacial provee de cobertura a todo el planeta.\\
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec posuere vitae ex quis blandit. In eu libero ante. Maecenas tempus, massa eget convallis sagittis, ligula nisl lobortis lectus, nec efficitur ligula velit non enim. Curabitur iaculis consequat vehicula. Donec tempus sapien laoreet eros hendrerit, quis sodales leo porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tincidunt elementum elementum. Donec viverra condimentum vulputate. Cras eget arcu ac odio facilisis convallis. Donec et est eget ipsum aliquet ultrices.
+El objetivo de un receptor GPS en cualquier parte de la Tierra es calcular su posición a través de la determinación de la posición de los satélites que enviaron sus datos de localización en un determinado momento.\\
 
-Aliquam egestas a elit a hendrerit. Quisque finibus, quam non faucibus porta, nulla libero blandit elit, in dignissim mauris nulla a erat. Fusce eget massa ac arcu dictum fermentum. Vestibulum iaculis vel nibh eu elementum. Morbi laoreet, metus ut dignissim dictum, risus sem euismod nunc, sed laoreet urna tellus sit amet elit. Nam lectus nisl, interdum sit amet metus at, malesuada imperdiet erat. Sed hendrerit fermentum pretium. Nulla lacinia elementum leo, a vulputate libero congue et. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+Los tiempos importantes a utilizar están listados aquí:
+
+\begin{itemize}
+\item $t^{'}_r$ - El pseudotiempo en que el receptor toma una medición.\\
+\item $t_{sv}$ - El pseudotiempo en el que un satélite emite la señal hacia los receptores.\\
+\item $t^{'}_p$ - El pseudotiempo de propagación de la señal emitida por el satélite hasta llegar a la antena del receptor.\\
+\item $\Delta t_{sv}$ - El sesgo del reloj satelital.\\
+\item $t$ - El tiempo de GPS en el que el satélite emite la señal hacia los receptores.\\
+\item $b$ - El sesgo del reloj del receptor.\\
+\item $t_r$ - El tiempo de GPS en el que el receptor toma una medición.\\
+\item $t_p$ - El tiempo de propagación de la señal desde la antena del satélite hasta la antena del receptor.
+\end{itemize}
+
+Las variables $t$ y $t_{sv}$ están dadas por: 
+
+\begin{equation}
+\label{Eq:tsv}
+t_{sv} = t + \Delta t_{sv}
+\end{equation}
+
+Donde $t_{sv}$ es llamado el \textit{tiempo de canal}, porque el receptor mantiene un valor distinto para cada canal.\\
+
+Las variables $t_r$ y $t^{'}_r$ están dadas por:
+
+\begin{equation}
+\label{Eq:t_r}
+t^{'}_r = t_r + b
+\end{equation}
+
+Donde $t^{'}_r$ es el tiempo del receptor y es común para todos los canales. \\
+
+El tiempo de propagación $t_p$ está dado por:
+
+\begin{equation}
+\label{Eq:t_p}
+t_p = t_r - t
+\end{equation}
+
+Los valores típicos para $t_p$ rondan entre 60 ms y 90 ms. \\
+
+Ahora, asumiendo que $b$ inicialmente es desconocida, el cálculo se resume como sigue:\\
+
+\begin{itemize}
+\item[1.] En el tiempo $t^{'}_r$, el receptor toma una muestra de todos los canales en los que encuentra señal.\\
+
+\item[2.] En cada canal, el procesador del receptor calcula $t_{sv}$.\\
+
+\item[3.] El procesador del receptor calcula el pseudotiempo de propagación y el pseudorango $\rho$ para cada canal.\\
+
+\begin{equation}
+\label{Eq:t'_p}
+t^{'}_p = t^{'}_r - t_{sv}
+\end{equation}
+
+\begin{equation}
+\label{Eq:rho}
+\rho = ct^{'}_p
+\end{equation}
+
+Donde $c$ es la velocidad de la luz, cuyo valor se muestra en la lista de constantes físicas \ref{Chap:Const}.
+
+\item[4.] Se calcula $\Delta t_{sv}$ utilizando la siguiente ecuación:
+
+\begin{equation}
+\label{Eq:Deltat_sv}
+\Delta t_{sv}= a_{f0} + a_{f1}(t_{sv}-t_{oc}) + a_{f2}(t_{sv}-t_{oc})^2 + \Delta t_{r}
+\end{equation}
+
+Donde $t_{oc}$ y los coeficientes polinomiales son parte del mensaje de navegación proporcionado por los satélites.\\
+
+El término $\Delta t_{r}$ es una corrección relativista:
+
+\begin{equation}
+\label{Eq:Deltat_r}
+\Delta t_r = FeA^{1/2}sin(E_{k})
+\end{equation}
+
+$F$, $e$ y $A$ son constantes definidas en la lista de constantes físicas\ref{Chap:Const}.\\
+
+$E_{k}$ es la ecuación de Kepler de la anomalía de la excentricidad, dada por:
+
+\begin{equation}
+\label{Eq:Kepler}
+E_k = M_k + esin(E_k)
+\end{equation}
+
+Donde $M_k$ es la anomalía media en radianes, dada por: \\
+
+$M_k = M_0 + t_k n$\\
+
+Donde $t_k$ es el tiempo desde la época referenciada, dada por:\\
+
+$t_k = t - t_{oe}$\\
+
+Donde $t_{oe}$ es una constante dada en la observación satelital.\\
+
+$M_0$ es una constante dada en la observación satelital\\
+
+Y $n$ es la media de corrección de movimiento, en radianes por segundo (rps), dada por:\\
+
+$n = n_0 + \Delta n$\\
+
+Donde $n_0$ es la media de compensación de movimiento en rps, dada por:\\
+
+$n_0 = \sqrt{\mu / A^{3}}$\\ 
+
+Y $\Delta n$ es una constante dada por la observación.\\
+
+\item[5.] Partiendo de que es posible calcular $\Delta t_{sv}$ con la ecuación \ref{Eq:Deltat_sv}, se puede calcular $t$ utilizando \ref{Eq:tsv}, de la siguiente manera:
+
+\begin{equation}
+\label{t}
+t = t_{sv} - \Delta t_{sv}
+\end{equation}
+
+Con $t$ calculada, es posible el cálculo de la posición de los satélites. Contando con dichas posiciones y las mediciones de pseudorangos, el receptor puede calcular su propia posición y el sesgo de reloj $b$.
+
+\item[6.] El receptor ahora puede calcular $t_r$ y $t_p$\cite{farrell2008aided}.
+\end{itemize}
 
 \subsection{Causas de error}
 
@@ -196,9 +318,11 @@ Como en todo sistema de medición, es probable que un cálculo de una posición 
 \begin{figure}[!ht]
 \centering
 \includegraphics[scale=0.23]{Figures/Sat}
-\caption[Error del reloj atómico satelital.]{Error del reloj atómico satelital.}
+\caption[Error del reloj atómico satelital.]{Error del reloj atómico satelital\footnotemark.}
 \label{fig:ErrSat}
 \end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://pixabay.com/p-568635/?no_redirect}{https://pixabay.com/}}
 
 Los satélites incorporan relojes atómicos de gran exactitud. Como el tiempo es crítico al momento de la triangulación de cualquier dispositivo, un error de apenas un nanosegundo equivale a un error en distancia de 30 cm. Los relojes atómicos acumulan un error de esta magnitud cada tres años. \\
 
@@ -209,9 +333,11 @@ También, al error en la posición de los satélites sobre sus órbitas se le at
 \begin{figure}[!ht]
 \centering
 \includegraphics[scale=0.48]{Figures/CapasAtm}
-\caption[Error por capas de la Atmósfera.]{Error por capas de la Atmósfera.}
+\caption[Error por capas de la Atmósfera.]{Error por capas de la Atmósfera\footnotemark.}
 \label{fig:ErrAtm}
 \end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://upload.wikimedia.org/wikipedia/commons/0/03/Atmosferaterra.png}{https://upload.wikimedia.org/}}
 
 Las señales de radio que comunican a los satélites y los receptores deben atravesar a la atmósfera a través de considerables kilómetros. El sólo hecho de atravesar partículas cargadas en la ionósfera\footnotemark y entrar en contacto con el vapor de agua de la tropósfera causa variaciones de velocidad en la transmisión. \\
 
@@ -223,10 +349,12 @@ El error en distancia atribuible a esta etapa es de 4 metros.
 
 \begin{figure}[!ht]
 \centering
-\includegraphics{Figures/RutasMult}
-\caption[Error por rutas múltiples.]{Error por rutas múltiples.}
+\includegraphics[scale=0.28]{Figures/RutasMult2}
+\caption[Error por rutas múltiples.]{Error por rutas múltiples\footnotemark.}
 \label{fig:ErrRMul}
 \end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://pixabay.com/p-579199/?no_redirect}{https://pixabay.com/}}
 
  El sistema está diseñado para funcionar idealmente a cielo abierto. Sin embargo, en condiciones normales, esto no puede ser del todo reproducible, ya sea por el uso en áreas forestales o áreas urbanas. \\
  
@@ -247,9 +375,11 @@ El error asociado a esta causa suele ser de 0.5 metros \cite{fallas2002sistema}.
 \begin{figure}[!ht]
 \centering
 \includegraphics[scale=0.30]{Figures/RonaldReagan}
-\caption[Presidente Ronald Reagan.]{Presidente Ronald Reagan.}
+\caption[Presidente Ronald Reagan.]{Presidente Ronald Reagan\footnotemark.}
 \label{fig:ErrDis}
 \end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://www.goodfreephotos.com/albums/people/ronald-reagan-portrait-photo.jpg}{https://www.goodfreephotos.com/}}
 
 GPS nació siendo un proyecto de tipo militar. Tras liberarse para uso civil en 1983 por autorización del presidente Ronald Reagan, se habilitaron dos secuencias codificadas llamadas códigos: C/A para uso civil y P para uso militar, con mayor precisión. \\
 
@@ -263,10 +393,12 @@ En 2007, el presidente de Estados Unidos anunción que los satélites de los blo
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.14]{Figures/Wireless}
-\caption[Símbolo de conectividad inalámbrica.]{Símbolo de conectividad inalámbrica.}
+\includegraphics[scale=0.14]{Figures/wireless2}
+\caption[Símbolo de conectividad inalámbrica.]{Símbolo de conectividad inalámbrica\footnotemark.}
 \label{fig:ErrWrl}
 \end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://pixabay.com/en/wireless-wi-fi-wireless-signal-1220904/}{https://pixabay.com/}}
 
 Se dice que dos dispositivos se comunican de forma \textbf{inalámbrica} cuando éstos interactúan sin un contacto sólido entre sus masas. \\
 
@@ -307,9 +439,11 @@ El estándar IEEE 802.15.4, mejor conocido como ZigBee, es una especificación p
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.20]{Figures/xbee}
-\caption[Equipo XBEE.]{Equipo XBEE.}
+\caption[Equipo XBEE.]{Equipo XBEE\footnotemark.}
 \label{fig:XBEE}
 \end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://https://www.digi.com/products/xbee-rf-solutions/embedded-rf-modules-modems/xbee-zigbee/product-images/xbee-s2c-zigbee/}{https://www.digi.com/}}
 
 Los módulos XBEE, fabricados por Digi International siguen el protocolo ZigBee. De entre todos esos módulos, destacan los de la serie PRO, ya que poseen una mayor potencia en la señal y en consecuencia, pueden hasta duplicar la capacidad de alcance en la distancia de transmisión. \\
 
@@ -332,9 +466,11 @@ Se caracterizan por el bajo consumo de energía. Está compuesto por tres compon
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.18]{Figures/BeagleBoneBlack}
-\caption[BeagleBone Black.]{BeagleBone Black.}
+\caption[BeagleBone Black.]{BeagleBone Black\footnotemark.}
 \label{fig:BBlack}
 \end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://www.flickr.com/photos/120586634@N05/14491195107}{https://www.flickr.com/}}
 
 La BeagleBone es una plataforma de desarrollo de bajo costo. \\
 
@@ -351,7 +487,7 @@ De las ventajas que posee una arquitectura como la del BeagleBone, basada en mic
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.30]{Figures/DGPS1}
-\caption[Esquema de funcionamiento en RTK.]{Esquema de funcionamiento en RTK.}
+\caption[Esquema de funcionamiento en RTK.]{Esquema de funcionamiento en RTK, por \cite{fallas2002sistema}.}
 \label{fig:RTK}
 \end{figure}
 

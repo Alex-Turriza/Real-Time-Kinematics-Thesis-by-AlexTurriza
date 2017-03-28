@@ -47,6 +47,8 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{placeins} %FloatBarrier
 
+\usepackage{amsmath}
+
 \usepackage[backend=bibtex,style=numeric,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
 \addbibresource{Bibliografia.bib} % The filename of the bibliography
@@ -236,6 +238,8 @@ Para alcanzar el objetivo, se trabajará con ayuda de software de procesamiento 
 
 \textbf{GPS} & \textbf{G}lobal \textbf{P}ositioning \textbf{S}ystem\\
 \textbf{RTK} & \textbf{R}eal-\textbf{T}ime \textbf{K}inematics\\
+\textbf{UAV} & \textbf{U}nmanned \textbf{A}erial \textbf{V}ehicle\\
+\textbf{UHF} & \textbf{U}ltra \textbf{H}igh \textbf{F}requency\\
 
 \end{abbreviations}
 
@@ -246,8 +250,19 @@ Para alcanzar el objetivo, se trabajará con ayuda de software de procesamiento 
 \begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
 
 % The \SI{}{} command is provided by the siunitx package, see its documentation for instructions on how to use it
+\label{Chap:Const}
 
-Rotación de la Tierra & $r_{Earth}$ & \SI{460}{\meter\per\second} \\
+Rotación de la Tierra &$\omega_{ie}$ & \SI{7.2921151e-5}{\radian\per\second} \\
+
+Velocidad de la Luz & $c$ & 
+\SI{2.99 792 458e8}{\meter\per\second} \\
+
+F (importante para determinación de posición de satélites) & $F$ & \SI{-4.442807633e-10}{\second\per\sqrt{\meter}} \\
+
+Excentricidad de la órbita de la Tierra & $e$ & 0.017\\
+
+Eje semi-mayor terrestre & $A$ & \SI{149.60e6}{ }\\
+
 %Constant Name & $Symbol$ & $Constant Value$ with units\\
 
 \end{constants}
@@ -258,13 +273,10 @@ Rotación de la Tierra & $r_{Earth}$ & \SI{460}{\meter\per\second} \\
 
 \begin{symbols}{lll} % Include a list of Symbols (a three column table)
 
-$a$ & distance & \si{\meter} \\
-$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
+$rps$ & distance & \si{\radian\per\second} \\
 %Symbol & Name & Unit \\
 
 \addlinespace % Gap to separate the Roman symbols from the Greek
-
-$\omega$ & angular frequency & \si{\radian} \\
 
 \end{symbols}
 
@@ -286,8 +298,9 @@ $\omega$ & angular frequency & \si{\radian} \\
 % Uncomment the lines as you write the chapters
 
 \include{Capitulos/Intro}
-\include{Capitulos/Marco} 
-\include{Capitulos/Metodo}
+\include{Capitulos/Marco}
+\include{Capitulos/DisHard} 
+\include{Capitulos/DisExp}
 \include{Capitulos/Result} 
 \include{Capitulos/Conc} 
 
