@@ -6,7 +6,7 @@
 
 %----------------------------------------------------------------------------------------
 
-% Define some commands to keep the formatting separated from the content 
+% Define some commands to keep the formatting separted from the content 
 \newcommand{\keyword}[1]{\textbf{#1}}
 \newcommand{\tabhead}[1]{\textbf{#1}}
 \newcommand{\code}[1]{\texttt{#1}}
@@ -55,9 +55,10 @@ En una planeación de ruta de un sistema de navegación autónomo, una incertidu
 \section{Trabajos previos}
 En el trabajo \cite{de2011diseno}, se usa un sistema GPS (Global Positioning System, sistema de posicionamiento global, por sus siglas en inglés) para apoyar en la logística de distribución de farmacéuticos, como control de rutas, tiempos y seguridad, mencionando ante todo la capacidad de poder obtener los datos de localización y tiempo, además de la velocidad de desplazamiento de un vehículo. Sin embargo, de acuerdo al trabajo \cite{mendoza2004recomendaciones}, se propone una actualización del ancho de carriles carreteros a una amplitud adecuada máxima de 3.6 m, y dado que un GPS mide su incertidumbre en metros dependiendo del ruido, entonces se está ante un problema que requiere de modelos y cálculos matemáticos extra para reducir dicho error de medición, que podría incluso indicar que el vehículo se encuentra fuera de la cinta asfáltica o circulando en una vía contraria. \\
 
-También, la tesis \cite{ronnback2000developement}, menciona la implementación de un sistema de navegación inercial INS/GPS para un UAV (Unmanned Aerial Vehicle, vehículo aéreo no tripulado, por sus siglas en inglés). Entre los datos a destacar, la posición de este sistema es estimada con un error de 2 metros con un 95\% de confianza, además de otros datos para asistir al vuelo como velocidad y su altitud. \\
+También, la tesis escrita por \cite{ronnback2000developement}, menciona la implementación de un sistema de navegación inercial INS/GPS para un UAV (Unmanned Aerial Vehicle, vehículo aéreo no tripulado, por sus siglas en inglés). Entre los datos a destacar, la posición de este sistema es estimada con un error de 2 metros con un 95\% de confianza, además de otros datos para asistir al vuelo como velocidad y su altitud. \\
 
-Revisando el desarrollo \cite{maldonado2010controlador}, los autores afirman que las coordenadas recibidas de un dispositivo GPS solamente son usadas como aproximación a la posición del vehículo, y nunca como un dato sólido que sirviese al computar datos, dada la exactitud mínima de 10 metros. Sin embargo, mencionan limitantes tales como el peso total de la carga del UAV y el consumo de energía causado por la integración de todos los demás sensores, de donde el GPS aporta entonces una cantidad mínima de información y utilidad en general. \\
+
+Revisando el desarrollo de \cite{maldonado2010controlador}, los autores afirman que las coordenadas recibidas de un dispositivo GPS solamente son usadas como aproximación a la posición del vehículo, y nunca como un dato sólido que sirviese al computar datos, dada la exactitud mínima de 10 metros. Sin embargo, mencionan limitantes tales como el peso total de la carga del UAV y el consumo de energía causado por la integración de todos los demás sensores, de donde el GPS aporta entonces una cantidad mínima de información y utilidad en general. \\
 
 
 \subsection{Propuesta}
@@ -80,4 +81,4 @@ El objetivo general de este trabajo es el diseño y la implementación de un sis
 
 Un sistema de localización de alta precisión incluso para objetivos móviles tiene un alto potencial dadas las posibles aplicaciones. Como un sensor en un sistema de control, GPS posee un error muy grande para emplearse en trabajos que requieran exactitud y estabilidad, como la toma de fotografías aéreas. Mediante corrección diferencial de tipo Real-Time Kinematics, se puede reducir dicha incertidumbre a niveles de escasos decímetros. El objetivo de este trabajo es el de implementar dicha corrección en un sistema móvil controlado por una BeagleBone Black.\\
 
-En el capítulo \ref{Chap:Marco}, se expone la teoría que se encuentra detrás de la metodología implementada en el proyecto de tesis, partiendo desde la definición de un sistema GPS, pasando por su modo de funcionamiento y las principales causas de error en sus mediciones. También, se presenta una breve descripción del funcionamiento de una comunicación inalámbrica, del software y del hardware utilizado.
+En el capítulo~\ref{Chap:Marco}, se expone la teoría que se encuentra detrás de la metodología implementada en el proyecto de tesis, partiendo desde la definición de un sistema GPS, pasando por su modo de funcionamiento y las principales causas de error en sus mediciones. También, se presenta una breve descripción del funcionamiento de una comunicación inalámbrica, del software y del hardware utilizado.

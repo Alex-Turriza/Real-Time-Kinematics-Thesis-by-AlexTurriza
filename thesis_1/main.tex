@@ -49,9 +49,10 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{amsmath}
 
-\usepackage[backend=bibtex,style=numeric,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+%\usepackage[backend=bibtex,style=numeric,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage{natbib}
 
-\addbibresource{Bibliografia.bib} % The filename of the bibliography
+%\addbibresource{Bibliografia.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
@@ -101,7 +102,7 @@ headsepline, % Uncomment to get a line under the header
 }
 
 \begin{document}
-
+ \bibliographystyle{apalikesp}  
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
@@ -326,8 +327,8 @@ $rps$ & distance & \si{\radian\per\second} \\
 %----------------------------------------------------------------------------------------
 
 %\printbibliography[heading=bibintoc]
-\printbibliography
-
+%\printbibliography
+\bibliography{Bibliografia} 
 %----------------------------------------------------------------------------------------
 
 \end{document}  
