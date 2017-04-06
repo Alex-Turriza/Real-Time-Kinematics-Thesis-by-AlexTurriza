@@ -40,15 +40,15 @@ A pesar del avance de la tecnología en las herramientas de medición, aún pers
 En una planeación de ruta de un sistema de navegación autónomo, una incertidumbre de $n$ metros a la redonda converge en una inexactitud significativa del sistema. El dispositivo puede encontrarse dentro de cualquier punto de la circunferencia de $2n$ metros de diámetro. Como se puede observar en la figura~\ref{fig:Prec}, todo el círculo azul denota la posición aproximada de un dispositivo celular con GPS, y en donde la pequeña elipse roja muestra la posición real en dicho mapa. La circunferencia del círculo azul abarca prácticamente la mitad de una manzana, haciendo notorio un problema de impracticidad al intentar implementar un sistema de posicionamiento de, por ejemplo, un automóvil autónomo.
 
 \section{Trabajos previos}
-En el trabajo \cite{de2011diseno}, se usa un sistema GPS (Global Positioning System\footnotemark) para apoyar en la logística de distribución de farmacéuticos, como control de rutas, tiempos y seguridad, mencionando ante todo la capacidad de poder obtener los datos de localización y tiempo, además de la velocidad de desplazamiento de un vehículo. Sin embargo, de acuerdo al artículo de \cite{mendoza2004recomendaciones}, donde se propone una actualización del ancho de carriles carreteros a una amplitud adecuada máxima de 3.6 m, dado que un GPS mide su incertidumbre en una escala de metros, podría indicar que el vehículo se encuentra fuera de la cinta asfáltica o circulando en una vía contraria. \\
+En la tesis de \cite{de2011diseno}, se usa un sistema GPS (Global Positioning System\footnotemark) para apoyar en la logística de distribución de farmacéuticos, como control de rutas, tiempos y seguridad, mencionando ante todo la capacidad de poder obtener los datos de localización y tiempo, además de la velocidad de desplazamiento de un vehículo. Sin embargo, de acuerdo al artículo de \cite{mendoza2004recomendaciones}, donde se propone una actualización del ancho de carriles carreteros a una amplitud adecuada máxima de 3.6 m, dado que un GPS mide su incertidumbre en una escala de metros, podría indicar que el vehículo se encuentra fuera de la cinta asfáltica o circulando en una vía contraria. Por tanto, se hace importante que un sistema tenga un menor grado de incertidumbre al ofrecido de forma estándar con GPS, como el Real-Time Kinematics, medido en pocos decímetros de error. \\
 
 \footnotetext{Sistema de Posicionamiento Global, por sus siglas en inglés.}
 
-También, la tesis escrita por \cite{ronnback2000developement}, menciona la implementación de un sistema de navegación inercial INS/GPS para un UAV (Unmanned Aerial Vehicle\footnotemark). Entre los datos a destacar, la posición de este sistema es estimada con un error de 2 metros con un 95\% de confianza, además de otros datos para asistir al vuelo como velocidad y su altitud. \\
+También, la tesis escrita por \cite{ronnback2000developement}, menciona la implementación de un sistema de navegación inercial INS/GPS para un UAV (Unmanned Aerial Vehicle\footnotemark). Entre los datos a destacar, la posición de este sistema es estimada con un error de 2 metros con un 95\% de confianza, además de otros datos para asistir al vuelo como velocidad y su altitud. Una incertidumbre de 2 metros hace inviable que un drone pudiese mantenerse cuando se le requiere que esté estático, por ejemplo, en fotografía aérea.\\
 
 \footnotetext{Vehículo Aéreo No Tripulado, por sus siglas en inglés.}
 
-Revisando el artículo de \cite{maldonado2010controlador}, los autores afirman que las coordenadas recibidas de un dispositivo GPS solamente son usadas como aproximación a la posición del vehículo, y nunca como un dato sólido que sirviese al computar datos, dada la exactitud mínima de 10 metros. Sin embargo, mencionan limitantes tales como el peso total de la carga del UAV y el consumo de energía causado por la integración de todos los demás sensores, de donde el GPS aporta entonces una cantidad mínima de información y utilidad en general. \\
+Revisando el artículo de \cite{maldonado2010controlador}, los autores afirman que las coordenadas recibidas de un dispositivo GPS solamente son usadas como aproximación a la posición del vehículo, y nunca como un dato sólido que sirviese al computar datos, dada la exactitud mínima de 10 metros. Sin embargo, mencionan limitantes tales como el peso total de la carga del UAV y el consumo de energía causado por la integración de todos los demás sensores, de donde el GPS aporta entonces una cantidad mínima de información y utilidad en general. Sería ideal que el sistema de posicionamiento aportara información más precisa y que aporte a las observaciones realizadas con el vehículo de forma general.\\
 
 
 \subsection{Propuesta}
@@ -73,11 +73,15 @@ El objetivo general de este trabajo es el diseño y la implementación de un sis
 
 \footnotetext{Ultra Alta Frecuencia, por sus siglas en inglés.}
 
+\subsubsection{Diagrama de funcionamiento}
+
+Lorem ipsum dolor.
+
 \section{Publicaciones}
 
 Los avances de este proyecto fueron publicados en las memorias en extenso del Encuentro Universitario de Sistemas Computacionales - EUSICS 2016.
 
-\subsection{Descripción del documento}
+\section{Descripción del documento}
 
 El presente trabajo se divide en las siguientes secciones: 
 
@@ -90,6 +94,6 @@ El presente trabajo se divide en las siguientes secciones:
 \item \textbf{Conclusiones:} En forma de síntesis, se da un resumen de los resultados obtenidos de acuerdo al modo de funcionamiento, las observaciones  y el rendimiento en general del sistema.\\
 \end{itemize}
 
-Además, al final se añade una sección de anexos en donde se adjuntan guías de configuración o programación de distintos dispositivos de hardware o de software necesarios para la reproducción del proyecto.
+Además, al final se añade una sección de anexos en donde se adjuntan guías de configuración o programación de distintos dispositivos de hardware o de software necesarios para la reproducción del proyecto.\\
 
 En el capítulo~\ref{Chap:Marco}, se expone la teoría que se encuentra detrás de la metodología implementada en el proyecto de tesis, partiendo desde la definición de un sistema GPS, pasando por su modo de funcionamiento y las principales causas de error en sus mediciones. También, se presenta una breve descripción del funcionamiento de una comunicación inalámbrica, del software y del hardware utilizado.

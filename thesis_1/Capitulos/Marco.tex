@@ -23,14 +23,14 @@ En esta sección se presenta la teoría de varios elementos clave en el prototip
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.07]{Figures/GPS}
+\includegraphics[scale=0.12]{Figures/GPS}
 \caption[Sistema de Posicionamiento Global.]{Sistema de Posicionamiento Global.\footnotemark}
 \label{fig:GPS}
 \end{figure}
 
 \footnotetext{Imagen tomada de: \href{https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/NDrive_GPS.jpg/1280px-NDrive_GPS.jpg}{https://upload.wikimedia.org/}}
 
-GPS fue iniciado en 1973 para su uso con fines militares por los Estados Unidos de Norteamérica. Su objetivo principal es la determinación de las coordenadas espaciales bajo una referencia mundial. Para dichos propósitos, se necesita una recepción de señales de un mínimo de cuatro satélites, cuyas coordenadas son plenamente conocidas \cite{huerta2005gps}.
+GPS fue iniciado en 1973 para su uso con fines militares por los Estados Unidos de Norteamérica. Su objetivo principal es la determinación de las coordenadas espaciales bajo una referencia mundial. Para dichos propósitos, se necesita una recepción de señales de un mínimo de cuatro satélites, cuyas coordenadas son plenamente conocidas \citep{huerta2005gps}.
 
 \subsection{Historia}
 
@@ -46,13 +46,13 @@ El primer sistema que utilizaba la triangulación mediante satélites fue \texti
 
 Requería que el observador realizara un seguimiento de 15 minutos a la constelación satelital, pudiendo acceder a ellos cada hora y media. Su error de precisión rondaba los 250 metros.\\
 
-En 1973 se propuso el \textit{DNSS} (Defense Navigation Satellite System, Sistema de Navegación Satelital de Defensa por sus siglas en inglés), cambiando de nombre a \textit{NAVSTAR} (Navigation System Time and Ranging, Sistema de Navegación por Tiempo y Distancia, por sus siglas en inglés), después a \textit{NAVSTAR-GPS} y finalmente a \textit{GPS} \cite{termal2014prototipo}.
+En 1973 se propuso el \textit{DNSS} (Defense Navigation Satellite System, Sistema de Navegación Satelital de Defensa por sus siglas en inglés), cambiando de nombre a \textit{NAVSTAR} (Navigation System Time and Ranging, Sistema de Navegación por Tiempo y Distancia, por sus siglas en inglés), después a \textit{NAVSTAR-GPS} y finalmente a \textit{GPS} \citep{termal2014prototipo}.
 
 \subsection{La constelación NAVSTAR}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.29]{Figures/Navstar}
+\includegraphics[scale=0.95]{Figures/Navstar}
 \caption[Satélite de la constelación NAVSTAR.]{Satélite de la constelación NAVSTAR\footnotemark.}
 \label{fig:NAV}
 \end{figure}
@@ -61,7 +61,7 @@ En 1973 se propuso el \textit{DNSS} (Defense Navigation Satellite System, Sistem
 
 La constelación \textit{NAVSTAR} está conformada por los satélites que se utilizan para triangular la posición. Se propuso que fueran 24 satélites situados en seis planos de cuatro satélites cada uno, con cobertura en toda la Tierra. \\
 
-La constelación ha sido lanzada en conjuntos llamados \textit{Blocks} (bloques en inglés), distribuidos de la siguiente manera.
+La constelación ha sido lanzada en conjuntos llamados \textit{Blocks} (bloques en inglés), distribuidos de la siguiente manera, de acuerdo al artículo de \cite{termal2014prototipo}.
 
 \begin{itemize}
 	\item Block I (1978 - 1985): 11 satélites lanzados, \textcolor{blue}{10 puestos en órbita con éxito}.
@@ -69,7 +69,7 @@ La constelación ha sido lanzada en conjuntos llamados \textit{Blocks} (bloques 
 	\item Block IIA (1990 - 1997): \textcolor{blue}{19 satélites lanzados con éxito}.
 	\item Block IIR (1997 - 2004): 11 satélites lanzados, \textcolor{blue}{12 satélites lanzados con éxito}.
 	\item Block IIR-M (2005 - 2009): \textcolor{blue}{8 satélites lanzados con éxito}.
-	\item Block IIF (2010): \textcolor{blue}{1 satélite lanzado con éxito} \citep{termal2014prototipo}
+	\item Block IIF (2010): \textcolor{blue}{1 satélite lanzado con éxito}.
 \end{itemize}
 
 \subsection{Estructura}
@@ -86,37 +86,50 @@ GPS está conformado por tres segmentos:
 
 Se conoce como segmento espacial al sistema de satélites que orbitan al planeta Tierra, emitiendo señales que permiten al receptor calcular su posición en el marco de referencia terrestre. \\
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.2]{Figures/constel}
+\caption[Segmento espacial.]{Segmento espacial.\footnotemark.}
+\label{fig:segEs}
+\end{figure}
+
+\footnotetext{Imagen tomada de \href{http://www.gps.gov/multimedia/images/constellation.jpg}{http://www.gps.gov/}}
+
 Se reparten en seis órbitas sincronizadas y se desplazan a una altitud de 20'000 Km. Cada uno de ellos dan una vuelta a la Tierra en 12 horas. \\
+
+Como ejemplifica la figura~\ref{fig:segEs}, los planos orbitales están equitativamente separadas de forma que se garantice virtualmente que desde cualquier punto del planeta, un mínimo de 4 satélites sean visibles, siendo éste el número mínimo para un funcionamiento adecuado. Cada órbita contiene 4 satélites, haciendo un total de 24 equipos rodeando al planeta. Hasta la fecha, existen 3 satélites denominados extra. Estos equipos están hechos tanto para mejorar la cobertura de los 24 originales, o bien, sustituir a alguno en caso de presentarse una falla o termine su ciclo de vida \citep{gps_gov}.\\
 
 Los satélites son ajustados mediante mensajes NAV enviados desde el segmento de control.
 
 \subsubsection{Segmento de control}
 
-Conjunto de sistemas instalados en la Tierra que permiten el funcionamiento óptimo del segmento espacial.
+Conjunto de sistemas instalados en la Tierra que permiten el funcionamiento óptimo del segmento espacial.\\
 
-Conformada por 12 estaciones, de las cuales la principal \textit{MCS} (Master Control Station, Estación de Control Principal por sus siglas en inglés) se encuentra en Colorado, en la Base Schriever de la Fuerza Aérea.	
+Conformada por 12 estaciones, de las cuales la principal \textit{MCS} (Master Control Station\footnotemark) se encuentra en Colorado, en la Base Schriever de la Fuerza Aérea.\\
+
+\footnotetext{Estación de Control Principal por sus siglas en inglés.}
 
 Tras el envío de nueva información, cada satélite sincroniza su reloj atómico y ajusta las efemérides de su órbita. El cálculo de esta última es a través de un filtro de Kalman, permitiendo una estimación precisa a pesar de múltiples factores externos.
 
 \subsubsection{Segmento de usuario}
 
-Conformado por equipos receptores diseñados para recibir, decodificar y procesar las señales de los satélites. Los parámetros para controlar la calidad de los receptores utilizados son los siguientes:
+Conformado por equipos receptores diseñados para recibir, decodificar y procesar las señales de los satélites. Los parámetros para controlar la calidad de los receptores utilizados son los siguientes, de acuerdo a \citep{termal2014prototipo}:
 
 \begin{itemize}
 	\item La antena debe estar bajo cielo abierto recibiendo la señal de los satélites con suficiente potencia.
 	\item El reloj interno del receptor debe mantener la sincronización entre receptor y satélites.
 	\item El número de canales debe habilitar al receptor para sintonizar un número suficiente de señales.
-	\item El procesador debe tener una frecuencia tal que garantice un cálculo correcto de la posición a partir de las señales captadas \cite{termal2014prototipo}.	
+	\item El procesador debe tener una frecuencia tal que garantice un cálculo correcto de la posición a partir de las señales captadas.	
 \end{itemize}
 
-El segmento espacial y el segmento de usuario están conectadas por dos frecuencias inalámbricas: \textbf{L1} y \textbf{L2}. La primera es de 1575.42 MHz y la segunda de 1227.60 MHz\cite{farrell2008aided}.
+El segmento espacial y el segmento de usuario están conectadas por dos frecuencias inalámbricas: \textbf{L1} y \textbf{L2}. La primera es de 1575.42 MHz y la segunda de 1227.60 MHz \citep{farrell2008aided}.
 
 \subsection{Dispositivos GPS}
 Los dispositivos GPS son aparatos receptores que obtienen la información de los satélites y realizan un procesamiento del mismo para ubicarse en el marco de referencia terrestre. \\
 
-Existen GPS de distintos tamaños y marcas.
+Existen GPS de distintos tamaños y marcas. La diferencia entre estas consiste en la velocidad del procesador, las frecuencias de los mensajes de los satélites que puede captar, su rango de operación y su velocidad de muestreo y actualización, y si es capaz de aplicar algún tipo de correcciones al momento. Algunos equipos pueden otorgar la información de sus observaciones sin procesar.
 
-\begin{table}[!htb]
+\begin{table}[H]
 \begin{center}
 \caption{Características del GPS Navspark RAW.}
 \begin{tabular}{|l|}
@@ -143,15 +156,15 @@ Existen GPS de distintos tamaños y marcas.
 \end{center}
 \end{table}
 
-\begin{table}[!htb]
+\begin{table}[H]
 \begin{center}
 \caption{Características del GPS Ublox C94 M8P.}
 \begin{tabular}{|l|}
 	\hline
-	\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{Ublox C94 M8P GPS}\\
+	\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textbf{Ublox C94 M8P GPS}\\
 	\hline
 	%\begin{figure}[H] % Example image
-	      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \includegraphics[width=0.25\linewidth]{Figures/ublox}\footnotemark
+	      \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \includegraphics[width=0.25\linewidth]{Figures/ublox}\footnotemark
 	%\caption{GPS Ublox. \footnotemark}
 	\label{fig:ubx} \\
 	%\end{figure} \\
@@ -178,29 +191,48 @@ Existen GPS de distintos tamaños y marcas.
 
 \subsection{Principios de funcionamiento}
 
-El objetivo de GPS como sistema de localización es el de calcular la posición de un punto cualquiera en un espacio de coordenadas (x,y,z)\cite{sonnenberg2013radar}, comenzando con el cálculo de las distancias del punto a un mínimo de tres satélites con localización conocida, dicha distancia se obtiene multiplicando el tiempo de propagación de la señal emitida por su velocidad de difusión.\\
+El objetivo de GPS como sistema de localización es el de calcular la posición de un punto cualquiera en un espacio de coordenadas (x,y,z) \citep{sonnenberg2013radar}, comenzando con el cálculo de las distancias del punto a un mínimo de tres satélites con localización conocida, dicha distancia se obtiene multiplicando el tiempo de propagación de la señal emitida por su velocidad de difusión.\\
 
-Al error de distancias causado por el desfase temporal del reloj del receptor se le llama pseudodistancia \cite{pozo2000sistema}.
+Al error de distancias causado por el desfase temporal del reloj del receptor se le llama pseudodistancia \citep{pozo2000sistema}.
 
 
 \subsection{Fundamento matemático}
+
+En esta subsección se muestra una síntesis del libro de \cite{farrell2008aided}, del cálculo de la posición de los satélites.
 
 A través de las frecuencias L1 y L2, el segmento espacial provee de cobertura a todo el planeta.\\
 
 El objetivo de un receptor GPS en cualquier parte de la Tierra es calcular su posición a través de la determinación de la posición de los satélites que enviaron sus datos de localización en un determinado momento.\\
 
-Los tiempos importantes a utilizar están listados aquí:
+Las variables importantes a utilizar están listados en el cuadro~\ref{Tab:TablaVariables}.
 
-\begin{itemize}
-\item $t^{'}_r$ - El pseudotiempo en que el receptor toma una medición.\\
-\item $t_{sv}$ - El pseudotiempo en el que un satélite emite la señal hacia los receptores.\\
-\item $t^{'}_p$ - El pseudotiempo de propagación de la señal emitida por el satélite hasta llegar a la antena del receptor.\\
-\item $\Delta t_{sv}$ - El sesgo del reloj satelital.\\
-\item $t$ - El tiempo de GPS en el que el satélite emite la señal hacia los receptores.\\
-\item $b$ - El sesgo del reloj del receptor.\\
-\item $t_r$ - El tiempo de GPS en el que el receptor toma una medición.\\
-\item $t_p$ - El tiempo de propagación de la señal desde la antena del satélite hasta la antena del receptor.
-\end{itemize}
+\begin{table}[!htb]
+\begin{center}
+\caption{Variables presentes en el cálculo de posiciones de satélites.}
+\label{Tab:TablaVariables}
+\begin{tabular}{|c|l|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Tiempos}}\\
+	\hline
+	$t^{'}_r$ & El pseudotiempo en que el receptor toma una medición.\\
+	\hline
+	$t_{sv}$ & El pseudotiempo en el que un satélite emite la señal hacia los \\ & receptores.\\
+	\hline
+	$t^{'}_p$ & El pseudotiempo de propagación de la señal emitida por el satélite\\ & hasta llegar a la antena del receptor.\\
+	\hline
+	$\Delta t_{sv}$ & El sesgo del reloj satelital.\\
+	\hline
+	$t$ & El tiempo de GPS en el que el satélite emite la señal hacia los\\ & receptores.\\
+	\hline 
+	$b$ & El sesgo del reloj del receptor.\\
+	\hline
+	$t_r$ & El tiempo de GPS en el que el receptor toma una medición.\\
+	\hline
+	$t_p$ & El tiempo de propagación de la señal desde la antena del satélite\\ & hasta la antena del receptor.\\
+	\hline
+\end{tabular}
+\end{center}
+\end{table}
 
 Las variables $t$ y $t_{sv}$ están dadas por: 
 
@@ -297,7 +329,7 @@ $n_0 = \sqrt{\mu / A^{3}}$\\
 
 Y $\Delta n$ es una constante dada por la observación.\\
 
-\item[5.] Partiendo de que es posible calcular $\Delta t_{sv}$ con la ecuación \ref{Eq:Deltat_sv}, se puede calcular $t$ utilizando \ref{Eq:tsv}, de la siguiente manera:
+\item[5.] Partiendo de que es posible calcular $\Delta t_{sv}$ con la ecuación~\ref{Eq:Deltat_sv}, se puede calcular $t$ utilizando la igualdad~\ref{Eq:tsv}, de la siguiente manera:
 
 \begin{equation}
 \label{t}
@@ -306,7 +338,7 @@ t = t_{sv} - \Delta t_{sv}
 
 Con $t$ calculada, es posible el cálculo de la posición de los satélites. Contando con dichas posiciones y las mediciones de pseudorangos, el receptor puede calcular su propia posición y el sesgo de reloj $b$.
 
-\item[6.] El receptor ahora puede calcular $t_r$ y $t_p$\cite{farrell2008aided}.
+\item[6.] El receptor ahora puede calcular $t_r$ y $t_p$.
 \end{itemize}
 
 \subsection{Causas de error}
@@ -322,9 +354,9 @@ Como en todo sistema de medición, es probable que un cálculo de una posición 
 
 \subsubsection{Error causado por el satélite}
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.23]{Figures/Sat}
+\includegraphics[scale=0.41]{Figures/Sat}
 \caption[Error del reloj atómico satelital.]{Error del reloj atómico satelital\footnotemark.}
 \label{fig:ErrSat}
 \end{figure}
@@ -337,9 +369,9 @@ También, al error en la posición de los satélites sobre sus órbitas se le at
 
 \subsubsection{Error causado por la atmósfera}
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.48]{Figures/CapasAtm}
+\includegraphics[scale=0.9]{Figures/CapasAtm}
 \caption[Error por capas de la Atmósfera.]{Error por capas de la Atmósfera\footnotemark.}
 \label{fig:ErrAtm}
 \end{figure}
@@ -354,9 +386,9 @@ El error en distancia atribuible a esta etapa es de 4 metros.
 
 \subsubsection{Error causado por rutas múltiples}
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.28]{Figures/RutasMult2}
+\includegraphics[scale=0.4]{Figures/RutasMult2}
 \caption[Error por rutas múltiples.]{Error por rutas múltiples\footnotemark.}
 \label{fig:ErrRMul}
 \end{figure}
@@ -373,15 +405,24 @@ Las nuevas antenas exteriores pueden filtrar este efecto.
 
 \subsubsection{Error causado por el receptor}
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.9]{Figures/disp}
+\caption[Error del receptor.]{Error del receptor\footnotemark.}
+\label{fig:ErrRec}
+\end{figure}
+
+\footnotetext{Imagen tomada de: \href{https://upload.wikimedia.org/wikipedia/commons/8/8f/Adafruit_GPS_Module_Breakout.jpg}{https://upload.wikimedia.org/}}
+
 Así como los satélites, los receptores cuentan con sus propios relojes. Debido a costos y dimensiones, éstos no pueden ser atómicos y por tanto son menos exactos, siendo otra fuente de error en la medición.\\
 
-El error asociado a esta causa suele ser de 0.5 metros \cite{fallas2002sistema}.
+El error asociado a esta causa suele ser de 0.5 metros \citep{fallas2002sistema}.
 
 \subsubsection{Error por Disponibilidad Selectiva}
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.30]{Figures/RonaldReagan}
+\includegraphics[scale=0.50]{Figures/RonaldReagan}
 \caption[Presidente Ronald Reagan.]{Presidente Ronald Reagan\footnotemark.}
 \label{fig:ErrDis}
 \end{figure}
@@ -390,17 +431,17 @@ El error asociado a esta causa suele ser de 0.5 metros \cite{fallas2002sistema}.
 
 GPS nació siendo un proyecto de tipo militar. Tras liberarse para uso civil en 1983 por autorización del presidente Ronald Reagan, se habilitaron dos secuencias codificadas llamadas códigos: C/A para uso civil y P para uso militar, con mayor precisión. \\
 
-En el código C/A, se habilitó un error intencionado para evitar un alto grado de precisión, conocido como \textit{Disponibilidad Selectiva}. El presidente Bill Clinton ordenó eliminarle en el año 2000. de \cite{termal2014prototipo}.
+En el código C/A, se habilitó un error intencionado para evitar un alto grado de precisión, conocido como \textit{Disponibilidad Selectiva}. El presidente Bill Clinton ordenó eliminarle en el año 2000 \citep{termal2014prototipo}.
 
 GPS actualmente mantiene incorporada la opción de disponibilidad selectiva, cuyo error ronda los 100 metros, en caso de que el gobierno de Estados Unidos desee rehabilitarlo. \\
 
-En 2007, el presidente de Estados Unidos anunción que los satélites de los bloques III no incorporarían más dicha opción \cite{chafer2017diseno}.
+En 2007, el presidente de Estados Unidos anunción que los satélites de los bloques III no incorporarían más dicha opción \citep{chafer2017diseno}.
 
 \section{Comunicación inalámbrica}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.14]{Figures/wireless2}
+\includegraphics[scale=0.30]{Figures/wireless2}
 \caption[Símbolo de conectividad inalámbrica.]{Símbolo de conectividad inalámbrica\footnotemark.}
 \label{fig:ErrWrl}
 \end{figure}
@@ -409,15 +450,17 @@ En 2007, el presidente de Estados Unidos anunción que los satélites de los blo
 
 Se dice que dos dispositivos se comunican de forma \textbf{inalámbrica} cuando éstos interactúan sin un contacto sólido entre sus masas. \\
 
-En los aparatos electrónicos, se suelen usar ondas de radiofrecuencia, que a su vez se subclasifican dependiendo de la frecuencia a la que son emitidas.\\
+En los aparatos electrónicos, se suelen usar ondas de radiofrecuencia, que a su vez se subclasifican dependiendo de la velocidad a la que son emitidas.\\
 
-A menor frecuencia, se obtiene una gran cobertura pero la capacidad se ve mermada. Conforme se aumenta la frecuencia, se pierde capacidad de cobertura pero la carga que puede tener una banda, aumenta. Se dice entonces que es una relación inversamente proporcional.\\
+A menor frecuencia, se obtiene una gran cobertura pero la capacidad se ve mermada. Conforme aumenta, se pierde capacidad de alcance pero la carga de información que puede tener, aumenta. Se dice entonces que existe una relación inversamente proporcional entre capacidad y frecuencia.\\
 
-Actualmente no existe algún organismo internacional que regule las frecuencias utilizadas por los dispositivos de comunicación inalámbrica, por lo que cada país ha de adoptar una regulación propia. En Estados Unidos es la \textit{FCC} (Federal Communications Commission, Comisión Federal de Comunicaciones, por sus siglas en inglés) quien determina dichas regulaciones. Otras organizaciones reguladoras son la \textit{ISO} (International Organization for Standardization, Organización Internacional para la Estandarización, por sus siglas en inglés) y la \textit{EPCglobal}.
+Actualmente no existe algún organismo internacional que regule las frecuencias utilizadas por los dispositivos de comunicación inalámbrica, por lo que cada país ha de adoptar una regulación propia. En Estados Unidos es la \textit{FCC} (Federal Communications Commission\footnotemark)\footnotetext{Comisión Federal de Comunicaciones, por sus siglas en inglés.}~quien determina dichas regulaciones. Otras organizaciones reguladoras son la \textit{ISO} (International Organization for Standardization\footnotemark) y la \textit{EPCglobal}.
 
-La clasificación del uso de las frecuencias por zona geográfica se muestra en la tabla \ref{Tab:BandasFreq}.
+\footnotetext{Organización Internacional para la Estandarización, por sus siglas en inglés.}
 
-\begin{table}[!htb]
+La clasificación del uso de las frecuencias por zona geográfica se muestra en el cuadro~\ref{Tab:BandasFreq}.
+
+\begin{table}[H]
 \begin{center}
 \caption{Bandas de frecuencia en comunicación inalámbrica.}
 \label{Tab:BandasFreq}
@@ -437,7 +480,7 @@ La clasificación del uso de las frecuencias por zona geográfica se muestra en 
 \end{center}
 \end{table}
 
-Tanto los sistemas LF y HF son para libre uso en todo el planeta. Sin embargo, UHF necesita de autorización y certificación dependiendo de la zona. En EUA, el uso de UHF no requiere de licencia, pero tiene algunas restricciones \cite{tapia2007identificacion}
+Tanto los sistemas LF y HF son para libre uso en todo el planeta. Sin embargo, UHF necesita de autorización y certificación dependiendo de la zona. En EUA, el uso de UHF no requiere de licencia, pero tiene algunas restricciones \citep{tapia2007identificacion}
 
 \subsection{Protocolo ZigBee}
 
@@ -445,7 +488,7 @@ El estándar IEEE 802.15.4, mejor conocido como ZigBee, es una especificación p
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.20]{Figures/xbee}
+\includegraphics[scale=0.60]{Figures/xbee}
 \caption[Equipo XBEE.]{Equipo XBEE\footnotemark.}
 \label{fig:XBEE}
 \end{figure}
@@ -454,7 +497,7 @@ El estándar IEEE 802.15.4, mejor conocido como ZigBee, es una especificación p
 
 Los módulos XBEE, fabricados por Digi International siguen el protocolo ZigBee. De entre todos esos módulos, destacan los de la serie PRO, ya que poseen una mayor potencia en la señal y en consecuencia, pueden hasta duplicar la capacidad de alcance en la distancia de transmisión. \\
 
-El módulo requiere una alimentación que va desde los 2.8 V hasta los 3.4 V \cite{oyarce2010guia}.
+El módulo requiere una alimentación que va desde los 2.8 V hasta los 3.4 V \citep{oyarce2010guia}.
 
 \subsection{Módulo UHF del Ublox C94-M8P GPS}
 
@@ -466,13 +509,13 @@ En él, se puede configurar el envío y recepción de diferentes contenidos. El 
 
 Los Sistemas Embebidos son sistemas programables, que realizan tareas específicas determinadas por el usuario, con el objetivo de optimizar los procesos para mejorar su desempeño y eficiencia, reduciendo tamaño y costos de producción. \\
 
-Se caracterizan por el bajo consumo de energía. Está compuesto por tres componentes principales: Procesador, Dispositivos de almacenamiento y Periféricos \cite{caballero2014desarrollo}.
+Se caracterizan por el bajo consumo de energía. Está compuesto por tres componentes principales: Procesador, Dispositivos de almacenamiento y Periféricos \citep{caballero2014desarrollo}.
 
 \subsection{BeagleBone Black}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.18]{Figures/BeagleBoneBlack}
+\includegraphics[scale=0.36]{Figures/BeagleBoneBlack}
 \caption[BeagleBone Black.]{BeagleBone Black\footnotemark.}
 \label{fig:BBlack}
 \end{figure}
@@ -483,13 +526,23 @@ La BeagleBone es una plataforma de desarrollo de bajo costo. \\
 
 Desarrollada por la BeagleBone Foundation de los Estados Unidos, una fundación sin ánimos de lucro, cuyo objetivo es la promoción de hardware y software de código abierto para el desarrollo de sistemas embebidos. \\
 
-Por su diseño, posee una arquitectura ARM, que posee soporte de varias distribuciones Linux \cite{coronado2014desarrollo}. \\
+Por su diseño, posee una arquitectura ARM, que posee soporte de varias distribuciones Linux \citep{coronado2014desarrollo}. \\
 
 Por su condición de hardware y software abierto, tanto sus esquemáticos del hardware, como las códigos fuente de su software están disponibles a todos los usuarios. \\
 
-De las ventajas que posee una arquitectura como la del BeagleBone, basada en microprocesadores, es que su uso conduce a plataformas más poderosas, capaces de realizar tareas de gran carga computacional \cite{coley2013beaglebone}.
+De las ventajas que posee una arquitectura como la del BeagleBone, basada en microprocesadores, es que su uso conduce a plataformas más poderosas, capaces de realizar tareas de gran carga computacional \citep{coley2013beaglebone}.
 
 \section{Software Libre}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.15]{Figures/opens}
+\caption[Logotipo de Open Source Initiative.]{Logotipo de Open Source Initiative\footnotemark.}
+\label{fig:opens}
+\end{figure}
+
+\footnotetext{Imagen tomada de \href{https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Opensource.svg/2000px-Opensource.svg.png}{https://upload.wikimedia.org/}}
+
 El \textbf{software} es un conjunto de instrucciones en lenguaje máquina para que una computadora realice funciones específicas.\\
 
 El código máquina llega a través de un código más entendible para humanos, llamado código fuente, que un compilador se encarga de traducir a lenguaje máquina. Cuando el código fuente no es accesible para nadie, se dice que se trata de código cerrado \citep{i2005software}.\\
@@ -502,9 +555,9 @@ Linux es un sistema operativo. Un sistema operativo es un conjunto de programas 
 
 \section{Real Time Kinematics}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.30]{Figures/DGPS1}
+\includegraphics[scale=0.53]{Figures/DGPS1}
 \caption[Esquema de funcionamiento en RTK.]{Esquema de funcionamiento en RTK, por \cite{fallas2002sistema}.}
 \label{fig:RTK}
 \end{figure}
@@ -515,9 +568,9 @@ Todo está en torno al siguiente supuesto: \\
 
 Se tienen dos receptores a una distancia de pocos km entre sí. En esta condición, se podría esperar que los errores causados por el reloj atómico del satélite, por la ionósfera y la tropósfera afectarían de igual manera y con la misma magnitud a ambos receptores, por su proximidad. Si la posición exacta de uno de los receptores es conocida, entonces esta información puede ser usada para determinar el error asociado a las lecturas de dicho receptor y después aplicar la corrección al otro dispositivo. \\
 
-Al GPS cuya posición es conocida recibe el nombre de \textbf{receptor base} y el segundo es llamado \textbf{receptor móvil}. La estación base calcula la distancia entre cada uno de los satélites de los que recibe señal y su posición (también conocida) para determinar el error asociado a la medición de distancia. Esa información la envía al receptor móvil, quien aplica la corrección hacia dicho satélite, obteniendo así un conocimiento más exacto sobre su posición \cite{fallas2002sistema}. \\
+Al GPS cuya posición es conocida recibe el nombre de \textbf{receptor base} y el segundo es llamado \textbf{receptor móvil}. La estación base calcula la distancia entre cada uno de los satélites de los que recibe señal y su posición (también conocida) para determinar el error asociado a la medición de distancia. Esa información la envía al receptor móvil, quien aplica la corrección hacia dicho satélite, obteniendo así un conocimiento más exacto sobre su posición \citep{fallas2002sistema}. \\
 
-Con todas las correcciones aplicadas de forma ideal, se alcanza una precisión mejor a los 10 cm \cite{cerrato2011diseno}. \\
+Con todas las correcciones aplicadas de forma ideal, se alcanza una precisión mejor a los 10 cm \citep{cerrato2011diseno}. \\
 
 Conforme el receptor móvil se aleja gradualmente de la estación base, gradualmente, la utilidad de las correcciones proporcionadas de la segunda a la primera, disminuye \citep{mueller1994networked}.
 
@@ -527,7 +580,7 @@ Este formato es un estándar internacional para transmitir datos de posicionamie
 
 Es utilizado sólo por las estaciones base para proporcionar sus observaciones. \\
 
-Su estructura consiste en un mensaje de 42 bits fijos más otros bits que pueden variar de acuerdo al o los mensajes que se requiera enviar, como muestra la tabla \ref{Tab:RTCM-Struct}\cite{rubinov2011review}.\\
+Su estructura consiste en un mensaje de 42 bits fijos más otros bits que pueden variar de acuerdo al o los mensajes que se requiera enviar \citep{rubinov2011review}, como muestra el cuadro~\ref{Tab:RTCM-Struct}.\\
 
 \begin{table}[!htb]
 \begin{center}
@@ -535,7 +588,7 @@ Su estructura consiste en un mensaje de 42 bits fijos más otros bits que pueden
 \label{Tab:RTCM-Struct}
 \begin{tabular}{|l|l|l|l|l|}
 	\hline
-	\textbf{Preámbulo} & \textbf{Reservado} & \textbf{\small Tamaño del mensaje} & \textbf{\small Datos del mensaje} & \textbf{Checksum}\\
+	\textbf{\small Preámbulo}& \textbf{\small Reservado}& \textbf{\small Tamaño del mensaje}& \textbf{\small Datos del mensaje}& \textbf{\small Checksum}\\
 	\hline
 	8 bits & 6 bits & 10 bits & n bits & 24 bits \\
 	\hline
@@ -566,9 +619,18 @@ El mensaje utilizado en este trabajo contendrá los siguientes datos: \\
 
 \section{RTKLIB}
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.8]{Figures/rtklib}
+\caption[Logotipo de RTKLIB.]{Logotipo de RTKLIB\footnotemark.}
+\label{fig:rtklib}
+\end{figure}
+
+\footnotetext{Imagen tomada de \href{https://avatars3.githubusercontent.com/u/4287338?v=3&s=400}{https://avatars3.githubusercontent.com/}}
+
 Desarrollado por Tomoji Takasu, RTKLIB es un paquete de programas de código abierto escrito en C, para posicionamiento tanto estándar como preciso con sistemas de bajo costo. Soporta varios modos de posicionamiento tales como: Simple, Diferencial, Cinemático, entre otros. \\
 
-En todos sus modos soporta tanto procesamiento en tiempo real así como postprocesamiento\cite{takasu2009development}.
+En todos sus modos soporta tanto procesamiento en tiempo real así como postprocesamiento \citep{takasu2009development}.
 
 \subsection{Modos de funcionamiento}
 
@@ -582,16 +644,16 @@ RTKLIB puede funcionar en distintos modos. Se explicarán un par de ellos en con
 RTKLIB utiliza un filtro de Kalman extendido (\textit{EKF}, extended Kalman filter, por sus siglas en inglés), para obtener los resultados de sus cálculos de aproximación. 
 
 \subsubsection{Modo estático}
-En este modo es necesaria una larga observación del cielo y de recolección de datos. Este requisito está fundamentado dado el cambio en la geometría del trayecto de los satélites, que apoyan en la resolución de ambigüedades\cite{wisniewski2013evaluation}.
+En este modo es necesaria una larga observación del cielo y de recolección de datos. Este requisito está fundamentado dado el cambio en la geometría del trayecto de los satélites, que apoyan en la resolución de ambigüedades \citep{wisniewski2013evaluation}.
 
 \subsubsection{Modo cinemático}
-Requerido cuando el objeto al que se quiere conocer su posición, se encuentra en movimiento. Permite obtener decímetros de precisión. Para un funcionamiento óptimo, necesita las coordenadas de una estación base conocida en el archivo de configuración. Los datos de esta estación fija pueden ser obtenidos mediante mensajes RTCM\cite{wisniewski2013evaluation}.
+Requerido cuando el objeto al que se quiere conocer su posición, se encuentra en movimiento. Permite obtener decímetros de precisión. Para un funcionamiento óptimo, necesita las coordenadas de una estación base conocida en el archivo de configuración. Los datos de esta estación fija pueden ser obtenidos mediante mensajes RTCM \citep{wisniewski2013evaluation}.
 
 \section{Vehículos aéreos no tripulados - VANT}
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \centering
-\includegraphics[scale=0.30]{Figures/UAV}
+\includegraphics[scale=0.75]{Figures/UAV}
 \caption[Vehículo aéreo no tripulado.]{Vehículo aéreo no tripulado\footnotemark.}
 \label{fig:UAV}
 \end{figure}
