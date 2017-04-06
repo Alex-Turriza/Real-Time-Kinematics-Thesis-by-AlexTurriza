@@ -64,12 +64,12 @@ La constelación \textit{NAVSTAR} está conformada por los satélites que se uti
 La constelación ha sido lanzada en conjuntos llamados \textit{Blocks} (bloques en inglés), distribuidos de la siguiente manera.
 
 \begin{itemize}
-	\item Block I (1978 - 1985): 11 satélites lanzados, \textcolor{green}{10 puestos en órbita con éxito}.
-	\item Block II (1989 - 1990): \textcolor{green}{9 satélites puestos en órbita con éxito}.
-	\item Block IIA (1990 - 1997): \textcolor{green}{19 satélites lanzados con éxito}.
-	\item Block IIR (1997 - 2004): 11 satélites lanzados, \textcolor{green}{12 satélites lanzados con éxito}.
-	\item Block IIR-M (2005 - 2009): \textcolor{green}{8 satélites lanzados con éxito}.
-	\item Block IIF (2010): \textcolor{green}{1 satélite lanzado con éxito} \citep{termal2014prototipo}
+	\item Block I (1978 - 1985): 11 satélites lanzados, \textcolor{blue}{10 puestos en órbita con éxito}.
+	\item Block II (1989 - 1990): \textcolor{blue}{9 satélites puestos en órbita con éxito}.
+	\item Block IIA (1990 - 1997): \textcolor{blue}{19 satélites lanzados con éxito}.
+	\item Block IIR (1997 - 2004): 11 satélites lanzados, \textcolor{blue}{12 satélites lanzados con éxito}.
+	\item Block IIR-M (2005 - 2009): \textcolor{blue}{8 satélites lanzados con éxito}.
+	\item Block IIF (2010): \textcolor{blue}{1 satélite lanzado con éxito} \citep{termal2014prototipo}
 \end{itemize}
 
 \subsection{Estructura}
@@ -136,7 +136,7 @@ Existen GPS de distintos tamaños y marcas.
 		\tabitem GPS con actualización de hasta 20 Hz.\\
 		\tabitem Rango de operación: (h $<$ 18000 msnm) \& (v $<$ 515 m/s).\\
 		\tabitem Precisión de hasta 2.5 metros.\\
-		\tabitem Consumo: 15 ma @ 3.3V.\\
+		\tabitem Consumo: 15 ma @ 3.3V \citep{nsraw}.\\
 	%\end{itemize} \\
 	\hline
 \end{tabular}
@@ -163,7 +163,7 @@ Existen GPS de distintos tamaños y marcas.
 		\tabitem Rango de operación: (h $<$ 50000 msnm) \& (v $<$ 500 m/s).\\
 		\tabitem Precisión de hasta 2.5 metros.\\
 		\tabitem Consumo: 23 ma @ 3.3V.\\
-		\tabitem \textcolor{blue}{Incluye módulo de radiofrecuencia.}\\
+		\tabitem \textcolor{blue}{Incluye módulo de radiofrecuencia.} \citep{ubloxc94}.\\
 	%\end{itemize} \\
 	\hline
 \end{tabular}
@@ -460,7 +460,7 @@ El módulo requiere una alimentación que va desde los 2.8 V hasta los 3.4 V \ci
 
 Los dispositivos GPS Ublox C94-M8P están diseñados para trabajar en pares y vienen incorporados con módulos de comunicación inalámbrica que operan en los 915 MHz de frecuencia en el continente americano. \\
 
-En él, se puede configurar el envío y recepción de diferentes contenidos. El manual de Ublox recomienda usar el formato RTCM3, que será explicado más adelante.
+En él, se puede configurar el envío y recepción de diferentes contenidos. El manual de Ublox recomienda usar el formato RTCM3, que será explicado más adelante \citep{ubloxc94}.
 
 \section{Sistemas de cómputo embebidos}
 
@@ -489,6 +489,17 @@ Por su condición de hardware y software abierto, tanto sus esquemáticos del ha
 
 De las ventajas que posee una arquitectura como la del BeagleBone, basada en microprocesadores, es que su uso conduce a plataformas más poderosas, capaces de realizar tareas de gran carga computacional \cite{coley2013beaglebone}.
 
+\section{Software Libre}
+El \textbf{software} es un conjunto de instrucciones en lenguaje máquina para que una computadora realice funciones específicas.\\
+
+El código máquina llega a través de un código más entendible para humanos, llamado código fuente, que un compilador se encarga de traducir a lenguaje máquina. Cuando el código fuente no es accesible para nadie, se dice que se trata de código cerrado \citep{i2005software}.\\
+
+El software libre es aquél cuyo código fuente puede ser usado, copiado, estudiado, modificado y redistribuido libremente. A pesar de dicha capacidad de propagación del código, el software puede seguir siendo vendido comercialmente \citep{garcia2007promocion}. 
+
+\subsection{GNU/Linux}
+Linux es un sistema operativo. Un sistema operativo es un conjunto de programas que permiten la interacción con el hardware, además de ejecutar otros programas, así como crear una interfaz con el usuario. En un sistema GNU/Linux, Linux es el núcleo o kernel, y GNU es el conjunto de programas \citep{debian}. 
+
+
 \section{Real Time Kinematics}
 
 \begin{figure}[ht]
@@ -506,7 +517,9 @@ Se tienen dos receptores a una distancia de pocos km entre sí. En esta condici�
 
 Al GPS cuya posición es conocida recibe el nombre de \textbf{receptor base} y el segundo es llamado \textbf{receptor móvil}. La estación base calcula la distancia entre cada uno de los satélites de los que recibe señal y su posición (también conocida) para determinar el error asociado a la medición de distancia. Esa información la envía al receptor móvil, quien aplica la corrección hacia dicho satélite, obteniendo así un conocimiento más exacto sobre su posición \cite{fallas2002sistema}. \\
 
-Con todas las correcciones aplicadas de forma ideal, se alcanza una precisión mejor a los 10 cm \cite{cerrato2011diseno}.
+Con todas las correcciones aplicadas de forma ideal, se alcanza una precisión mejor a los 10 cm \cite{cerrato2011diseno}. \\
+
+Conforme el receptor móvil se aleja gradualmente de la estación base, gradualmente, la utilidad de las correcciones proporcionadas de la segunda a la primera, disminuye \citep{mueller1994networked}.
 
 \section{Formato RTCM-3}
 
@@ -573,6 +586,51 @@ En este modo es necesaria una larga observación del cielo y de recolección de 
 
 \subsubsection{Modo cinemático}
 Requerido cuando el objeto al que se quiere conocer su posición, se encuentra en movimiento. Permite obtener decímetros de precisión. Para un funcionamiento óptimo, necesita las coordenadas de una estación base conocida en el archivo de configuración. Los datos de esta estación fija pueden ser obtenidos mediante mensajes RTCM\cite{wisniewski2013evaluation}.
+
+\section{Vehículos aéreos no tripulados - VANT}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.30]{Figures/UAV}
+\caption[Vehículo aéreo no tripulado.]{Vehículo aéreo no tripulado\footnotemark.}
+\label{fig:UAV}
+\end{figure}
+
+\footnotetext{Imagen tomada de \href{https://upload.wikimedia.org/wikipedia/commons/7/79/Aeryon_Scout_In_Flight.jpg}{https://upload.wikimedia.org/}}
+
+Los vehículos aéreos no tripulados (\textit{VANT} o \textit{UAV}, Unmanned Aerial Vehicle por sus siglas en inglés) estuvieron orientados inicialmente para operaciones de contexto militar \citep{fahlstrom2012introduction}.\\
+
+Un VANT es definido como un vehículo con operaciones y sistemas mecatrónicos, con computadoras a bordo y supervisado por humanos desde tierra \citep{haluani2015tecnologia}.\\
+
+En usos civiles, se pueden destacar empresas que investigan formas de entregar paquetes mediante el uso de esta tecnología, así como observaciones meteorológicas.\\
+
+Algunas áreas de aplicación son \citep{addati2014introduccion}:
+
+\begin{itemize}
+\item Imágenes y vídeo aéreo.
+\item Monitoreo y vigilancia.
+\item Inspección de infraestructuras.
+\item Búsqueda y rescate.
+\item Gestión de emergencias.
+\item Mapeo de terrenos.
+\end{itemize}
+
+\subsection{Instrumentación de vuelo}
+
+La instrumentación de vuelo es la encargada de obtener el estado de vuelo del UAV de manera precisa, así como el entorno en el que se encuentra haciendo uso de distintos sensores.\\
+
+Dependiendo de la finalidad de una misión de vuelo, se pueden encontrar los siguientes sistemas de sensado \citep{barrientos2007vehiculos}:\\
+
+Para un marco de referencia inercial.
+\begin{itemize}
+\item Acelerómetros.
+\item Giroscopios.
+\end{itemize}
+Para posicionamiento y velocidad.
+\begin{itemize}
+\item GPS.
+\item Compás.
+\end{itemize}
 
 \section{Conclusión}
 
