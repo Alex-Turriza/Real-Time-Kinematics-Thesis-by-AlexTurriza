@@ -200,7 +200,7 @@ Al error de distancias causado por el desfase temporal del reloj del receptor se
 
 En esta subsección se muestra una síntesis del libro de \cite{farrell2008aided}, del cálculo de la posición de los satélites.
 
-A través de las frecuencias L1 y L2, el segmento espacial provee de cobertura a todo el planeta.\\
+A través de las frecuencias L1 y L2, el segmento espacial provee de cobertura a todo el planeta. \cite{farrell2008aided} menciona al \textbf{pseudorango} como aquel desfase en distancia causado por errores de medición causados por el reloj del dispositivo. El \textbf{pseudotiempo} lo define como el tiempo de tránsito del mensaje de los satélites a los aparatos GPS incluyendo el error. \\
 
 El objetivo de un receptor GPS en cualquier parte de la Tierra es calcular su posición a través de la determinación de la posición de los satélites que enviaron sus datos de localización en un determinado momento.\\
 
@@ -212,7 +212,7 @@ Las variables importantes a utilizar están listados en el cuadro~\ref{Tab:Tabla
 \label{Tab:TablaVariables}
 \begin{tabular}{|c|l|}
 	\hline
-	\multicolumn{2}{|c|}{\textbf{Tiempos}}\\
+	\multicolumn{2}{|c|}{\textbf{Variables}}\\
 	\hline
 	$t^{'}_r$ & El pseudotiempo en que el receptor toma una medición.\\
 	\hline
@@ -233,6 +233,15 @@ Las variables importantes a utilizar están listados en el cuadro~\ref{Tab:Tabla
 \end{tabular}
 \end{center}
 \end{table}
+
+En la figura~\ref{fig:DiagMat} se puede observar a cada variable relacionada con el objeto que juega durante el proceso del cálculo de posición de los satélites. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.41]{Figures/DiagramaMat}
+\caption[El rol que juega cada variable.]{El rol que juega cada variable.}
+\label{fig:DiagMat}
+\end{figure}
 
 Las variables $t$ y $t_{sv}$ están dadas por: 
 
@@ -531,6 +540,10 @@ Por su diseño, posee una arquitectura ARM, que posee soporte de varias distribu
 Por su condición de hardware y software abierto, tanto sus esquemáticos del hardware, como las códigos fuente de su software están disponibles a todos los usuarios. \\
 
 De las ventajas que posee una arquitectura como la del BeagleBone, basada en microprocesadores, es que su uso conduce a plataformas más poderosas, capaces de realizar tareas de gran carga computacional \citep{coley2013beaglebone}.
+
+\subsection{BlackLib}
+
+BlackLib es una biblioteca que permite controlar el hardware y los puertos de la BeagleBone Black a través del lenguaje C++. Puede leer entradas análogas, generar señales pwm, usar pines de propósito general o GPIO, y comunicarse con otros dispositivos a través de comunicación serial \citep{blacklib}.
 
 \section{Software Libre}
 
