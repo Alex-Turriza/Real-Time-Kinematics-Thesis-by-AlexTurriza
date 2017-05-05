@@ -160,7 +160,7 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{declaration}
 \addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
-\noindent Yo, \authorname, declaro que este trabajo de tesis titulado, \enquote{\ttitle} y los resultados presentados son de mi autoría. Declaro que que:
+\noindent Yo, \authorname, declaro que este trabajo de tesis titulado, \enquote{\ttitle} y los resultados presentados son de mi autoría. Declaro que:
 
 \begin{itemize} 
 \item Este trabajo fue realizado durante mi estancia como estudiante de la Facultad.
@@ -316,18 +316,46 @@ $rps$ & distance & \si{\radian\per\second} \\
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
+\Huge \chapter{}\label{Anx:nfs}
+\vspace*{\fill}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{Figures/null}
+\end{figure}
+\vfill
 \includepdf[pages=-]{Apendices/nfs}
+
+\Huge \chapter{}\label{Anx:qemu}
+\vspace*{\fill}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{Figures/null}
+\end{figure}
+\vfill
 \includepdf[pages=-]{Apendices/qemu}
+
+\Huge \chapter{}\label{Anx:xbeeGuia}
+\vspace*{\fill}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{Figures/null}
+\end{figure}
+\vfill
 \includepdf[pages=-]{Apendices/xbeeGuia}
 
-%\include{Apendices/nfs.pdf}
-%\include{Appendices/AppendixB}
-%\include{Appendices/AppendixC}
+\Huge \chapter{}\label{Anx:ublox}
+\vspace*{\fill}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{Figures/null}
+\end{figure}
+\vfill
+\includepdf[pages=-]{Apendices/ublox}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
-
+\normalsize
 %\printbibliography[heading=bibintoc]
 %\printbibliography
 \bibliography{Bibliografia} 
