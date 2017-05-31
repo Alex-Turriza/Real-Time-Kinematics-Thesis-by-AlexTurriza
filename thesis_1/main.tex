@@ -40,7 +40,7 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{pdfpages}
 \usepackage[T1]{fontenc} % Output font encoding for international characters
- 
+\usepackage{listings} % Para inserción de códigos bash linux en Anexo
 \usepackage{booktabs}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
@@ -49,6 +49,8 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{placeins} %FloatBarrier
 
 \usepackage{amsmath}
+
+\usepackage{wrapfig} %Para imágenes entre textos
 
 \usepackage{float}
 
@@ -304,46 +306,51 @@ Eje semi-mayor terrestre & $A$ & \SI{149.60e6}{ }\\
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-\Huge \chapter{}\label{Anx:nfs}
-\vspace*{\fill}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{Figures/null}
-\end{figure}
-\vfill
-\includepdf[pages=-]{Apendices/nfs}
+\include{Apendices/nfs}
+\include{Apendices/qemu}
+\include{Apendices/xctu}
+\include{Apendices/ublox}
 
-\Huge \chapter{}\label{Anx:qemu}
-\vspace*{\fill}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{Figures/null}
-\end{figure}
-\vfill
-\includepdf[pages=-]{Apendices/qemu}
+%\Huge \chapter{}\label{Anx:nfs}
+%\vspace*{\fill}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.5]{Figures/null}
+%\end{figure}
+%\vfill
+%\includepdf[pages=-]{Apendices/nfs}
 
-\Huge \chapter{}\label{Anx:xbeeGuia}
-\vspace*{\fill}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{Figures/null}
-\end{figure}
-\vfill
-\includepdf[pages=-]{Apendices/xbeeGuia}
+%\Huge \chapter{}\label{Anx:qemu}
+%\vspace*{\fill}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.5]{Figures/null}
+%\end{figure}
+%\vfill
+%\includepdf[pages=-]{Apendices/qemu}
 
-\Huge \chapter{}\label{Anx:ublox}
-\vspace*{\fill}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.5]{Figures/null}
-\end{figure}
-\vfill
-\includepdf[pages=-]{Apendices/ublox}
+%\Huge \chapter{}\label{Anx:xbeeGuia}
+%\vspace*{\fill}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.5]{Figures/null}
+%\end{figure}
+%\vfill
+%\includepdf[pages=-]{Apendices/xbeeGuia}
+
+%\Huge \chapter{}\label{Anx:ublox}
+%\vspace*{\fill}
+%\begin{figure}[H]
+%\centering
+%\includegraphics[scale=0.5]{Figures/null}
+%\end{figure}
+%\vfill
+%\includepdf[pages=-]{Apendices/ublox}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
-\normalsize
+\small
 %\printbibliography[heading=bibintoc]
 %\printbibliography
 \bibliography{Bibliografia} 

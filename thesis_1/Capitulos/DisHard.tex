@@ -13,7 +13,7 @@ En el diagrama de la figura~\ref{fig:diagcomp} se muestran los componentes de ca
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.45]{Figures/DiagramaFinal}
+\includegraphics[scale=0.47]{Figures/DiagramaFinal}
 \caption[Diagrama de componentes.]{Diagrama de componentes.}
 \label{fig:diagcomp}
 \end{figure}
@@ -43,13 +43,11 @@ El sistema cuenta con dos estaciones, tal y como se puede observar en la figura~
 La estación base cuenta con dos componentes principales:
 
 \begin{itemize}
-\item GPS Ublox C94-M8P.
-\item Comunicación inalámbrica.
+\item Tarjeta GPS Ublox C94-M8P.
+\item Módulo de Comunicación inalámbrica.
 \end{itemize}
 
-En la figura~\ref{fig:estbase} se puede observar la estación base en una prueba realizada en el exterior.
-
-En la memoria de la tarjeta Ublox C94-M8P de esta estación se encuentran las coordenadas de su posición actual (se pueden actualizar vía PC utilizando el Anexo de Configuración de los Dispositivos GPS Ublox C94-M8P para su uso en RTKLIB en el apéndice~\ref{Anx:ublox}, adjunto a esta tesis).\\
+En la figura~\ref{fig:estbase} se puede observar la estación base en una prueba realizada en el exterior. En la memoria de la tarjeta Ublox C94-M8P de esta estación se encuentran las coordenadas de su posición actual (se pueden actualizar vía PC utilizando el Anexo de Configuración de los Dispositivos GPS Ublox C94-M8P para su uso en RTKLIB en el apéndice~\ref{Anx:ublox}, adjunto a esta tesis).\\
 
 Mediante la comunicación inalámbrica, los datos de posicionamiento necesarios para aplicar correcciones son enviadas a la tarjeta Ublox de la estación móvil, utilizando el protocolo RTCM3.
 
@@ -66,22 +64,18 @@ Mediante la comunicación inalámbrica, los datos de posicionamiento necesarios 
 
 \footnotetext{Todos los diagramas de conexión electrónica son para referencia y no muestran el estado real del cableado. Todos fueron realizados con el software fritzing.}
 
-El diseño de los componentes de la estación móvil gira en torno a las capacidades y al diseño del GPS Ublox C94-M8P. De este dispositivo se tomarán dos datos importantes: \textbf{datos de posicionamiento de esta misma tarjeta}, ofrecidos por un \textbf{puerto microUSB}, y los \textbf{datos de corrección de posición} proporcionados por la estación base a través de comunicación inalámbrica, obtenidos por \textbf{protocolo RS232}, a través de un periférico como el que se muestra en la figura~\ref{fig:convert}.\\
-
-Por tanto, en la tarjeta BeagleBone Black, son tomados el puerto USB y un puerto (dos pines) de comunicación serial.\\
+El diseño de los componentes de la estación móvil gira en torno a las capacidades y al diseño del GPS Ublox C94-M8P, de quien se tomarán dos datos importantes: \textbf{datos de posicionamiento de esta misma tarjeta}, ofrecidos por un \textbf{puerto microUSB}, y los \textbf{datos de corrección de posición} proporcionados por la estación base a través de comunicación inalámbrica, obtenidos por \textbf{protocolo RS232}, a través de un periférico como el que se muestra en la figura~\ref{fig:convert}. Por tanto, en la tarjeta BeagleBone Black, son reservados el puerto USB y un puerto (dos pines) de comunicación serial.\\
 
 \subsubsection{Visualización de resultados}
 
-Para la visualización de los datos durante el funcionamiento del sistema, se dispone de una pantalla LCD 16x2 RGB conectada a pines de entrada/salida de uso general de la BeagleBone de la forma que muestra la siguiente figura~\ref{fig:LCDCon}:
+Para la visualización de los datos durante el funcionamiento del sistema, se dispone de una pantalla LCD 16x2 RGB conectada a pines de entrada/salida de uso general de la BeagleBone de la forma que muestra la siguiente figura~\ref{fig:LCDCon}. En la figura~\ref{fig:LCDFunc}, se puede observar dicha LCD proporcionando datos ya procesados de localización:
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.75]{Figures/LCD_Con}
 \caption[Conexión de la LCD.]{Conexión de la LCD.}
 \label{fig:LCDCon}
-\end{figure}
-
-En la figura~\ref{fig:LCDFunc}, se puede observar dicha LCD proporcionando datos ya procesados de localización. 
+\end{figure} 
 
 \begin{figure}[H]
 \centering
@@ -125,7 +119,7 @@ Mediante RTKNAVI, una aplicación de RTKLIB, se configuró el entorno para que r
 
 \item \textbf{Hacer funcionar el sistema en GNU/Linux x86\_64:} Una vez funcionando RTKLIB en Windows, el objetivo de este punto es el de transportarse a un sistema intermedio entre el utilizado por el dispositivo de destino y el de donde se configuró inicialmente, sabiendo que todo el hardware estaba correctamente conectado y funcionando.\\ 
 
-Se usa ahora la aplicación RTKRCV que es la equivalente en entorno consola a RTKNAVI en Windows. Se realizaron los ajustes necesarios para hacer operativo el sistema, tales como indicar las rutas de obtención de datos del hardware.\\
+Bajo este Sistema Operativo, la aplicación RTKRCV, que es la equivalente en entorno consola a RTKNAVI en Windows, es la encargada de procesar los datos de la tarjeta GPS Ublox C94-M8P. Se realizaron los ajustes necesarios para hacer operativo el hardware, tales como indicar las rutas de obtención de datos.\\
 
 Una captura de pantalla de RTKRCV funcionando puede verse en la figura~\ref{fig:rtkrcv1}.
 
@@ -151,11 +145,7 @@ Entre sus métodos están conjuntos de sets y gets para manejo de información. 
 
 \subsubsection{Biblioteca LCD}
 
-La biblioteca LCD \textit{lcd.h} permite instanciar una LCD RGB de 16x2 conectada a los pines que se le indiquen al constructor siguiendo el orden de declaración que se indica: rojo, verde, azul, RS, enable, db7, db6, db5, db4. \\
-
-Durante el proceso de instanciación del objeto, automáticamente se inicializa para el inmediato despliegue de información en  la siguiente línea de código.\\
-
-Entre sus métodos se encuentra el apagar y encender la pantalla, cambiar el color, escribir un string en la pantalla, saltos de línea, etcétera.
+La biblioteca LCD \textit{lcd.h} permite instanciar una LCD RGB de 16x2 conectada a los pines que se le indiquen al constructor siguiendo el orden de declaración que se indica: rojo, verde, azul, RS, enable, db7, db6, db5, db4. Durante el proceso de instanciación del objeto, automáticamente se inicializa para el inmediato despliegue de información en  la siguiente línea de código.Entre sus métodos se encuentra el apagar y encender la pantalla, cambiar el color, escribir un string en la pantalla, saltos de línea, etcétera.
 
 \section{Conclusión}
 

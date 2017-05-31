@@ -25,10 +25,10 @@ La humanidad ha estado interesada en obtener información acerca del contexto en
 
 A través del tiempo, se ha aumentado la certeza de los datos contenidos, por ejemplo, en un mapa, debido al aumento de la precisión de las herramientas de medición utilizadas. Un ejemplo de dichas herramientas son las computadoras, sensores y actuadores, así como de algoritmos que permiten filtrar errores aleatorios. \\
 
-Mediante el uso de un sistema RTK, se tiene como finalidad obtener la información de navegación de un vehículo de forma que este sistema pueda aportar datos confiables medibles en pocos decímetros para apoyar en el control de posicionamiento del mismo.
+Mediante el uso de un sistema de navegación en tiempo real (RTK), se tiene como finalidad obtener la información de navegación de un vehículo de forma que este sistema pueda aportar datos confiables medibles en pocos decímetros para apoyar en el control de posicionamiento del mismo.
 
 \section{Planteamiento del Problema}
-A pesar del avance de la tecnología en las herramientas de medición, aún persisten algunos errores en la precisión que de forma práctica afectan al implementar sistemas basados en ellos. \\
+A pesar del avance de la tecnología en las herramientas de medición, aún persisten algunos errores en la precisión, que de forma práctica, afectan al implementar sistemas basados en ellos. \\
 
 \begin{figure}[H]
 \centering
@@ -44,7 +44,7 @@ En la tesis de \cite{de2011diseno}, se usa un sistema GPS (Global Positioning Sy
 
 \footnotetext{Sistema de Posicionamiento Global, por sus siglas en inglés.}
 
-También, la tesis escrita por \cite{ronnback2000developement}, menciona la implementación de un sistema de navegación inercial INS/GPS para un UAV (Unmanned Aerial Vehicle\footnotemark). Entre los datos a destacar, la posición de este sistema es estimada con un error de 2 metros con un 95\% de confianza, además de otros datos para asistir al vuelo como velocidad y su altitud. Una incertidumbre de 2 metros hace inviable que un drone pudiese mantenerse cuando se le requiere que esté estático, por ejemplo, en fotografía aérea.\\
+También, la tesis escrita por \cite{ronnback2000developement}, menciona la implementación de un sistema de navegación inercial INS/GPS para un UAV (Unmanned Aerial Vehicle\footnotemark). Entre los datos a destacar, la posición de este sistema es estimada con un error de 2 m con un 95\% de confianza, además de otros datos para asistir al vuelo como velocidad y su altitud. Una incertidumbre de 2 m hace inviable que un drone (vehículo aéreo no tripulado) pudiese mantenerse cuando se le requiere que esté estático, por ejemplo, en fotografía aérea.\\
 
 \footnotetext{Vehículo Aéreo No Tripulado, por sus siglas en inglés.}
 
@@ -52,18 +52,18 @@ Revisando el artículo de \cite{maldonado2010controlador}, los autores afirman q
 
 
 \subsection{Propuesta}
-Dado que en los trabajos previos se presentan algunos inconvenientes con la presición del sistema de navegación inercial de los dispositivos dada la naturaleza del sensor GPS común utilizado, se propone la realización de un sistema de navegación que utilice una aplicación de cómputo denominada RTKLIB, que nominalmente reduce el error a una escala medible en centímetros a partir de dos señales de GPS, en un sistema portátil de arquitectura ARM, ampliando las posibilidades de aprovechamiento de los datos.
+Dado que en los trabajos previos se presentan algunos inconvenientes con la presición del sistema de navegación inercial de los dispositivos debido a la naturaleza del sensor GPS común utilizado, se propone la realización de un sistema de navegación que utilice una aplicación de cómputo denominada RTKLIB, que nominalmente reduce el error a una escala medible en centímetros a partir de dos señales de GPS, en un sistema portátil de arquitectura ARM (Advanced RISC Machine), ampliando las posibilidades de aprovechamiento de los datos.
 
 \section{Hipótesis}
-Mediante corrección diferencial de tipo Real-Time Kinematics, se puede reducir dicha incertidumbre a niveles de escasos decímetros.
+Mediante corrección diferencial de tipo Real-Time Kinematics, se puede reducir la incertidumbre de un equipo GPS a niveles de escasos decímetros.
 
 \section{Objetivo}
 \subsection{General}
-El objetivo general de este trabajo es el diseño y la implementación de un sistema de navegación capaz de conocer su ubicación en un entorno geográfico con una alta precisión para apoyar en proyectos que requieran de dicha información, utilizando un equipo pequeño y portátil.
+El objetivo general de este trabajo es el diseño y la implementación de un sistema de navegación capaz de conocer su ubicación en un entorno geográfico con una alta precisión para apoyar en proyectos que requieran de dicha información, utilizando dispositivos pequeños y portátiles.
 
 \subsection{Objetivos específicos}
 \begin{itemize}
-	\item Configurar los GPS en dos estaciones, una móvil y una base.
+	\item Configurar los GPS en dos estaciones: una móvil y una base.
     \item Configurar la transferencia de datos entre estaciones en UHF (Ultra-High Frequency\footnotemark).
     \item Acondicionamiento de una microcomputadora BeagleBone con sus respectivos periféricos de apoyo.
     \item Programación de una biblioteca que controle los periféricos a través de la microcomputadora.
@@ -72,10 +72,6 @@ El objetivo general de este trabajo es el diseño y la implementación de un sis
 \end{itemize}
 
 \footnotetext{Ultra Alta Frecuencia, por sus siglas en inglés.}
-
-\subsubsection{Diagrama de funcionamiento}
-
-Lorem ipsum dolor.
 
 \section{Publicaciones}
 
@@ -96,4 +92,4 @@ El presente trabajo se divide en las siguientes secciones:
 
 Además, al final se añade una sección de anexos en donde se adjuntan guías de configuración o programación de distintos dispositivos de hardware o de software necesarios para la reproducción del proyecto.\\
 
-En el capítulo~\ref{Chap:Marco}, se expone la teoría que se encuentra detrás de la metodología implementada en el proyecto de tesis, partiendo desde la definición de un sistema GPS, pasando por su modo de funcionamiento y las principales causas de error en sus mediciones. También, se presenta una breve descripción del funcionamiento de una comunicación inalámbrica, del software y del hardware utilizado.
+%En el capítulo~\ref{Chap:Marco}, se expone la teoría que se encuentra detrás de la metodología implementada en el proyecto de tesis, partiendo desde la definición de un sistema GPS, pasando por su modo de funcionamiento y las principales causas de error en sus mediciones. También, se presenta una breve descripción del funcionamiento de una comunicación inalámbrica, del software y del hardware utilizado.
