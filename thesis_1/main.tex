@@ -37,6 +37,7 @@ headsepline, % Uncomment to get a line under the header
 %consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 \usepackage[utf8]{inputenc} % Required for inputting international characters
+
 \usepackage{pdfpages}
 \usepackage[T1]{fontenc} % Output font encoding for international characters
  
@@ -197,11 +198,11 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-El conocimiento del entorno que nos rodea ha sido tema de interés humano desde antaño, así como la interacción con éste en el día a día, para poder investigar diferentes maneras en cómo se pueden aprovechar los recursos disponibles. Unas herramientas para describir el medio geográfico son los mapas realizados a mano; sin embargo, en lugar de ser una herramienta de exactitud, son sólo una referencia del entorno, dado el gran error derivado de la inexactitud humana en las mediciones.
+El conocimiento del entorno que nos rodea ha sido tema de interés humano desde antaño, así como la interacción con éste en el día a día, para poder investigar diferentes maneras en cómo se pueden aprovechar los recursos disponibles. Unas herramientas para describir el medio geográfico son los mapas realizados a mano; sin embargo, en lugar de ser una herramienta de exactitud, son sólo una referencia del entorno, dado el gran error derivado de la inexactitud humana en las mediciones.\\
 
-En el presente trabajo se propone la implementación de un sistema de navegación cinética satelital para vehículos aéreos no tripulados (UAV, por sus siglas en inglés), que sea capaz de proporcionar una precisión muy alta (medible en centímetros) de forma que represente un apoyo en la planeación de rutas y ejecuciones de determinadas tareas cada cierta distancia que permitan la creación de mapas de imágenes aéreas más precisos.
+En el presente trabajo se propone la implementación de un sistema de navegación cinética satelital para vehículos aéreos no tripulados (UAV, por sus siglas en inglés), que sea capaz de proporcionar una precisión muy alta (medible en centímetros) de forma que represente un apoyo en la planeación de rutas y ejecuciones de determinadas tareas cada cierta distancia que permitan la creación de mapas de imágenes aéreas más precisos.\\
 
-Para alcanzar el objetivo, se trabajará con ayuda de software de procesamiento para RTK, que servirá de apoyo al momento de alcanzar la precisión deseada, además de dispositivos de hardware tales como un par de receptores GPS comunicados de forma inalámbrica, indispensables para implementar una corrección de tipo diferencial.
+Para alcanzar el objetivo, se trabajará con ayuda de software de posicionamiento en tiempo real (Real-Time Kinematics), que servirá de apoyo al momento de alcanzar la precisión deseada, además de dispositivos de hardware tales como un par de receptores GPS (Sistema de posicionamiento global, GPS por sus siglas en inglés) comunicados de forma inalámbrica, indispensables para implementar una corrección de tipo diferencial.
 \end{abstract}
 
 \afterpage{\blankpage}
@@ -216,7 +217,7 @@ Para alcanzar el objetivo, se trabajará con ayuda de software de procesamiento 
 
 \textit{A mis asesores de tesis}, \textbf{Dr. Arturo Espinosa Romero y Dr. Anabel Martín González}, por la innumerable cantidad de conocimientos transmitidos que me serán de utilidad en el resto de la vida, y por su infinita paciencia ante mis dudas y adversidades especialmente durante la realización de este trabajo. Mención especial a todos mis profesores, no sólo de la universidad. \\
 
-\textit{A mi grupo de cercanos amigos:} Ernesto [\textbf{Nestor9224}], Kevin [\textbf{Kevan357}], Rafael [\textbf{RFer93}], Oscar [\textbf{MadOsc}], George [\textbf{El Tío}], Beto [\textbf{Ax Owl xA}] por estos años de reuniones para despejar la mente con los videojuegos como excusa. Junto conmigo, Alex [\textbf{AlexRT07}] somos \textit{los inútiles}, o mejor dicho, [TeamGG]\textbf{Los Gansos Galácticos}. \\
+\textit{A mi grupo de cercanos amigos:} Ernesto [\textbf{Nestor9224}], Kevin [\textbf{Kevan357}], Rafael [\textbf{RFer93}], Oscar [\textbf{MadOsc}], George [\textbf{El Tío}], Beto [\textbf{Ax Owl xA}] por estos años de reuniones para despejar la mente con los videojuegos como excusa. Junto conmigo, Alex [\textbf{AlexRT07}] somos conocidos con diversos nombres tales como \textit{los inútiles}, \textit{los amigos}, los \textit{Youtube 3, Ingenieros 0}, o últimamente de forma oficial: [TeamGG]\textbf{Los Gansos Galácticos}. \\
 
 \textit{A mis compañeros de la carrera} por compartir cada momento no sólo en la estancia en la facultad y hacer de esta experiencia universitaria algo más agradable. \\
 
@@ -269,19 +270,6 @@ Eje semi-mayor terrestre & $A$ & \SI{149.60e6}{ }\\
 %Constant Name & $Symbol$ & $Constant Value$ with units\\
 
 \end{constants}
-
-%----------------------------------------------------------------------------------------
-%	SYMBOLS
-%----------------------------------------------------------------------------------------
-
-\begin{symbols}{lll} % Include a list of Symbols (a three column table)
-
-$rps$ & distance & \si{\radian\per\second} \\
-%Symbol & Name & Unit \\
-
-\addlinespace % Gap to separate the Roman symbols from the Greek
-
-\end{symbols}
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION
