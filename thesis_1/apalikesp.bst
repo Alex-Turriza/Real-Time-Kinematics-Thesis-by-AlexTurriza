@@ -251,8 +251,8 @@ FUNCTION {format.editors}
     { "" }
     { editor format.names
       editor num.names$ #1 >
-	{ ", editores" * }
 	{ ", editor" * }
+	{ ", editores" * }
       if$
     }
   if$
@@ -327,8 +327,8 @@ FUNCTION {format.number.series}
     { number empty$
 	{ series field.or.null }
 	{ output.state mid.sentence =
-	    { "number" }
-	    { "Number" }
+	    { "numero" }
+	    { "Numero" }
 	  if$
 	  number tie.or.space.connect
 	  series empty$

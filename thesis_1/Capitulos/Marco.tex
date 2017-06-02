@@ -337,7 +337,7 @@ donde $c$ es la velocidad de la luz: $c \approx 2.998 \times 10^{8} ms^{-1}$.
 \Delta t_{sv}= a_{f0} + a_{f1}(t_{sv}-t_{oc}) + a_{f2}(t_{sv}-t_{oc})^2 + \Delta t_{r}
 \end{equation}
 
-donde $t_{oc}$ y los coeficientes polinomiales son parte del mensaje de navegación proporcionado por los satélites. El término $\Delta t_{r}$ es una corrección relativista:\\
+donde $t_{oc}$ y los coeficientes polinomiales $a_{fi}$, $i \in {0, 1, 2}$ son parte del mensaje de navegación proporcionado por los satélites. El término $\Delta t_{r}$ es una corrección relativista:\\
 
 \begin{equation}
 \label{Eq:Deltat_r}
@@ -381,7 +381,7 @@ Una vez obtenida $t$, es posible el cálculo de la posición de los satélites. 
 \item[6.] El receptor ahora puede calcular $t_r$ y $t_p$.
 \end{itemize}
 }
-\subsection{Causas de error}
+\subsection{Causas de error}\label{subsec:CauErr}
 
 Como en todo sistema de medición, es probable que un cálculo de una posición se vea afectado por cualquiera de los siguientes factores: 
 
