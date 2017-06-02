@@ -136,7 +136,7 @@ Existen GPS de distintos tamaños y marcas. La diferencia entre éstas consiste 
 \label{fig:nsraw}
 \end{figure}
 
-Fabricado por NavSpark, sus características son las siguientes \citep{nsraw}:
+Fabricado por NavSpark, mostrado en la figura~\ref{fig:nsraw}. Sus características son las siguientes \citep{nsraw}:
 
 \begin{itemize}
 \item Procesador: 100MHz 32bit LEON3 Sparc-V8 + IEEE-754 Compliant FPU.
@@ -156,7 +156,7 @@ Fabricado por NavSpark, sus características son las siguientes \citep{nsraw}:
 \label{fig:ubx}
 \end{figure}
 
-Fabricado por Ublox, sus características son las siguientes \citep{ubloxc94}:
+Fabricado por Ublox, mostrado en la figura~\ref{fig:ubx}. Sus características son las siguientes \citep{ubloxc94}:
 
 \begin{itemize}
 \item 72 channel u-blox M8 engine GPS L1C/A, GLONASS L1OF, BeiDou B1.\\
@@ -337,7 +337,7 @@ donde $c$ es la velocidad de la luz: $c \approx 2.998 \times 10^{8} ms^{-1}$.
 \Delta t_{sv}= a_{f0} + a_{f1}(t_{sv}-t_{oc}) + a_{f2}(t_{sv}-t_{oc})^2 + \Delta t_{r}
 \end{equation}
 
-donde $t_{oc}$ y los coeficientes polinomiales $a_{fi}$, $i \in {0, 1, 2}$ son parte del mensaje de navegación proporcionado por los satélites. El término $\Delta t_{r}$ es una corrección relativista:\\
+donde $t_{oc}$ y los coeficientes polinomiales $a_{fi}$, $i \in \lbrace0, 1, 2\rbrace$ son parte del mensaje de navegación proporcionado por los satélites. El término $\Delta t_{r}$ es una corrección relativista:\\
 
 \begin{equation}
 \label{Eq:Deltat_r}
