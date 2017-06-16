@@ -107,11 +107,11 @@ Así, se tiene un cuadro de tamaño $a$ en cada lado para poder realizar las med
 
 \section{Procedimiento}
 
-Una vez trazada la figura, se identificará la localización de uno de los vértices de la figura en coordenadas de latitud y longitud bajo el marco de referencia terrestre, tomando a Google Maps como herramienta de apoyo. Entonces, la posición del resto de vértices y algunos puntos seleccionados del cuadrado es calculada utilizando la conversión de distancia en metros a coordenadas geográficas.\\
+Una vez trazada la figura, se identificará la localización de un punto cercano al trazado en coordenadas de latitud y longitud bajo el marco de referencia terrestre, tomando a Google Maps como herramienta de apoyo, para ahí configurar y colocar la estación base. Los lados de la figura se segmentarán en partes iguales, puntos en donde se realizará la medición de coordenadas de GPS durante la rutina.\\
 
 Una vez verificados los cálculos, el sistema RTK será puesto en marcha con la estación base en un punto cercano con una vista libre del cielo, y el \textit{rover} en el vértice de la figura con posición conocida. Tras el paso de cierto tiempo en que el sistema se estabilice, se comenzará el recorrido de la figura.\\
 
-En la memoria de la BeagleBone Black, se guardará un registro de las posiciones, calculadas por RTKLIB, del \textit{rover}, mismas que serán utilizadas para determinar el tamaño del cuadrado de acuerdo a la solución de la implementación de Real-Time Kinematics y posteriormente comparado con los cálculos previos a la sesión de experimentación.
+En la memoria de la BeagleBone Black, se guardará un registro de las posiciones, calculadas por RTKLIB, del \textit{rover}, mismas que serán utilizadas para determinar el ajuste a una línea recta de los lados de la figura mediante regresión lineal.
 
 \section{Conclusión}
 
