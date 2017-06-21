@@ -37,16 +37,16 @@ A pesar del avance de la tecnología en las herramientas de medición, aún pers
 \label{fig:Prec}
 \end{figure}
 
-En una planeación de ruta de un sistema de navegación autónomo, una incertidumbre de $n$ metros a la redonda converge en una inexactitud significativa del sistema. El dispositivo puede encontrarse dentro de cualquier punto de la circunferencia de $2n$ metros de diámetro. Como se puede observar en la figura~\ref{fig:Prec}, todo el círculo azul denota la posición aproximada de un dispositivo celular con GPS, y en donde la pequeña elipse roja muestra la posición real en dicho mapa. La circunferencia del círculo azul abarca prácticamente la mitad de una manzana, haciendo notorio un problema de impracticidad al intentar implementar un sistema de posicionamiento de, por ejemplo, un automóvil autónomo.
+En una planeación de ruta de un sistema de navegación autónomo, decir que se conoce la posición de un objeto con un error de $n$ metros a la redonda de un punto dado, hace posible que dicho objeto se encuentre en cualquier lugar entre dicho punto y $n$ metros a la redonda, haciéndolo de consideración. Por ejemplo, al lanzar en la línea de costa a un helicóptero de juguete y volar un cierto tiempo, si se le pide que mediante GPS retorne al punto de inicio, se podría terminar con el juguete acuatizando varios metros dentro del mar. Como se puede observar en la figura~\ref{fig:Prec}, todo el círculo azul denota la posición aproximada de un dispositivo celular con GPS, y en donde la pequeña elipse roja muestra la posición real en dicho mapa. La circunferencia del círculo azul abarca prácticamente la mitad de una manzana, haciendo notorio un problema de impracticidad al intentar implementar un sistema de posicionamiento de, por ejemplo, un automóvil autónomo.
 
 \section{Trabajos previos}
 En la tesis de \cite{de2011diseno}, se usa un sistema GPS (Global Positioning System\footnotemark) para apoyar en la logística de distribución de farmacéuticos, como control de rutas, tiempos y seguridad, mencionando ante todo la capacidad de poder obtener los datos de localización y tiempo, además de la velocidad de desplazamiento de un vehículo. Sin embargo, de acuerdo al artículo de \cite{mendoza2004recomendaciones}, donde se propone una actualización del ancho de carriles carreteros a una amplitud adecuada máxima de 3.6 m, dado que un GPS mide su incertidumbre en una escala de metros, podría indicar que el vehículo se encuentra fuera de la cinta asfáltica o circulando en una vía contraria. Por tanto, se hace importante que un sistema tenga un menor grado de incertidumbre al ofrecido de forma estándar con GPS, como el Real-Time Kinematics, medido en pocos decímetros de error. \\
 
 \footnotetext{Sistema de Posicionamiento Global, por sus siglas en inglés.}
 
-También, la tesis escrita por \cite{ronnback2000developement}, menciona la implementación de un sistema de navegación inercial INS/GPS para un UAV (Unmanned Aerial Vehicle\footnotemark). Entre los datos a destacar, la posición de este sistema es estimada con un error de 2 m con un 95\% de confianza, además de otros datos para asistir al vuelo como velocidad y su altitud. Una incertidumbre de 2 m hace inviable que un drone (vehículo aéreo no tripulado) pudiese mantenerse cuando se le requiere que esté estático, por ejemplo, en fotografía aérea.\\
+También, la tesis escrita por \cite{ronnback2000developement}, menciona la implementación de un sistema de navegación inercial INS/GPS para un VANT (Vehículo Aéreo No Tripulado\footnotemark). Entre los datos a destacar, la posición de este sistema es estimada con un error de 2 m con un 95\% de confianza, además de otros datos para asistir al vuelo como velocidad y su altitud. Una incertidumbre de 2 m hace inviable que un drone (vehículo aéreo no tripulado) pudiese mantenerse cuando se le requiere que esté estático, por ejemplo, en fotografía aérea.\\
 
-\footnotetext{Vehículo Aéreo No Tripulado, por sus siglas en inglés.}
+\footnotetext{Unmanned Aerial Vehicle, por sus siglas en inglés.}
 
 Revisando el artículo de \cite{maldonado2010controlador}, los autores afirman que las coordenadas recibidas de un dispositivo GPS solamente son usadas como aproximación a la posición del vehículo, y nunca como un dato sólido que sirviese al computar datos, dada la exactitud mínima de 10 metros. Sin embargo, mencionan limitantes tales como el peso total de la carga del UAV y el consumo de energía causado por la integración de todos los demás sensores, de donde el GPS aporta entonces una cantidad mínima de información y utilidad en general. Sería ideal que el sistema de posicionamiento aportara información más precisa y que aporte a las observaciones realizadas con el vehículo de forma general.\\
 
@@ -65,13 +65,12 @@ El objetivo general de este trabajo es el diseño y la implementación de un sis
 \begin{itemize}
 	\item Configurar los GPS en dos estaciones: una móvil y una base.
     \item Configurar la transferencia de datos entre estaciones en UHF (Ultra-High Frequency\footnotemark).
+    \footnotetext{Ultra-Alta Frecuencia, por sus siglas en inglés.}
     \item Acondicionamiento de una microcomputadora BeagleBone con sus respectivos periféricos de apoyo.
     \item Programación de una biblioteca que controle los periféricos a través de la microcomputadora.
     \item Integración de módulos.
 	\item Evaluación de los datos obtenidos.   
 \end{itemize}
-
-\footnotetext{Ultra Alta Frecuencia, por sus siglas en inglés.}
 
 \section{Publicaciones}
 

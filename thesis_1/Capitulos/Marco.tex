@@ -39,7 +39,7 @@ En la figura~\ref{fig:GPS} se observa un instrumento GPS que es empleado para mo
 \subsubsection{Antecedentes}
 Antes de que GPS funcionara mediante satélites, ya estaban implementados varios sistemas de localización radio-terrestres. Uno de ellos era conocido como LORAN (\textit{Long Range Navigation}, Navegación de largo alcance, por sus siglas en inglés). Se fundamentaba por el envío de una señal desde distintos emisores. Al percibir señal de tres distintos transmisores, podía determinar su posición. \\
 
-Fue tras el lanzamiento del primer satélite ruso Sputnik, que investigadores norteamericanos descubrieron que era posible la determinación de la posición gracias a la deformación de una señal por efecto Doppler. Así, conociendo la posición del satélite a través de la posición del observador en la Tierra; a la inversa, sería posible conocer la posición de un observador conociendo la posición del satélite.
+Fue tras el lanzamiento del primer satélite ruso Sputnik, que investigadores norteamericanos descubrieron que era posible la determinación de la posición gracias a la deformación de una señal por efecto Doppler. Así, de acuerdo a sus suposiciones, conociendo la posición del satélite a través de la posición del observador en la Tierra; a la inversa, sería posible conocer la posición de un observador conociendo la posición del satélite~\citep{termal2014prototipo}.
 
 \subsubsection{Con satélites en órbita}
 El primer sistema que utilizaba la triangulación mediante satélites fue \textit{TRANSIT} en 1960, entrando en operaciones hasta 1965. Constaba de seis satélites en seis planos, contando con cobertura mundial. \\
@@ -95,9 +95,9 @@ Se conoce como segmento espacial al sistema de satélites que orbitan al planeta
 
 \footnotetext{Imagen tomada de \href{http://www.gps.gov/multimedia/images/constellation.jpg}{http://www.gps.gov/}}
 
-Se reparten en seis órbitas sincronizadas y se desplazan a una altitud de 20'000 Km. Cada uno de ellos da una vuelta a la Tierra en 12 horas. \\
+Se reparten en seis órbitas sincronizadas y se desplazan a una altitud de 20000 Km. Cada uno de ellos da una vuelta a la Tierra en 12 horas. \\
 
-Como ejemplifica la figura~\ref{fig:segEs}, los planos orbitales están equitativamente separadas de forma que se garantice virtualmente que desde cualquier punto del planeta, un mínimo de 4 satélites sean visibles, siendo éste el número mínimo para un funcionamiento adecuado. Cada órbita contiene 4 satélites, haciendo un total de 24 equipos rodeando al planeta. Hasta la fecha, existen 3 satélites denominados extra. Estos equipos están hechos tanto para mejorar la cobertura de los 24 originales, o bien, sustituir a alguno en caso de presentarse una falla o termine su ciclo de vida \citep{gps_gov}.\\
+Como se ejemplifica en la figura~\ref{fig:segEs}, los planos orbitales están equitativamente separadas de forma que se garantice virtualmente que desde cualquier punto del planeta, un mínimo de 4 satélites sean visibles, siendo éste el número mínimo para un funcionamiento adecuado. Cada órbita contiene 4 satélites, haciendo un total de 24 rodeando al planeta. Hasta la fecha, existen 3 satélites denominados extra, quienes están hechos tanto para mejorar la cobertura de los 24 originales, o bien, sustituir a alguno en caso de presentarse una falla o termine su ciclo de vida~\citep{gps_gov}.\\
 
 Los satélites son ajustados mediante mensajes NAV enviados desde el segmento de control.
 
@@ -107,11 +107,11 @@ El segmento de control es un conjunto de sistemas instalados en la Tierra que pe
 
 \footnotetext{Estación de Control Principal por sus siglas en inglés.}
 
-Tras el envío de nueva información, cada satélite sincroniza su reloj atómico y ajusta las efemérides de su órbita. El cálculo de esta última es a través de un filtro de Kalman, permitiendo una estimación precisa a pesar de múltiples factores externos.
+Tras el envío de nueva información, cada satélite sincroniza su reloj atómico y ajusta las efemérides (parámetros orbitales de alta precisión, que definen su posición) de su órbita. El cálculo de esta última es a través de un filtro de Kalman, permitiendo una estimación precisa a pesar de múltiples factores externos.
 
 \subsubsection{Segmento de usuario}
 
-El segmento de usuario está conformado por equipos receptores diseñados para recibir, decodificar y procesar las señales de los satélites. Los parámetros para controlar la calidad de los receptores utilizados son los siguientes, de acuerdo a \citep{termal2014prototipo}:
+El segmento de usuario está conformado por equipos receptores diseñados para recibir, decodificar y procesar las señales de los satélites. Los parámetros para controlar la calidad de los receptores utilizados son los siguientes, de acuerdo a~\citet{termal2014prototipo}:
 
 \begin{itemize}
 	\item La antena debe estar bajo cielo abierto recibiendo la señal de los satélites con suficiente potencia.
@@ -411,14 +411,14 @@ También, al error en la posición de los satélites sobre sus órbitas se le at
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.4]{Figures/GraficaErrAtm}
+\includegraphics[scale=0.38]{Figures/GraficaErrAtm}
 \caption[Error por capas de la Atmósfera.]{Gráfica de densidad electrónica y temperatura de las capas atmosféricas\footnotemark.}
 \label{fig:ErrGAtm}
 \end{figure}
 
 \footnotetext{Imagen tomada de: \href{https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Atmosphere_with_Ionosphere_es.svg/1036px-Atmosphere_with_Ionosphere_es.svg.png}{https://upload.wikimedia.org/}}
 
-Las señales de radio que comunican a los satélites y los receptores deben atravesar a la atmósfera a través de considerables kilómetros. El sólo hecho de atravesar partículas cargadas en la ionósfera\footnotemark y entrar en contacto con el vapor de agua de la tropósfera causa variaciones de velocidad en la transmisión. La figura~\ref{fig:ErrGAtm} muestra una gráfica que muestra la densidad electrónica y la temperatura de las capas. \\
+Las señales de radio que comunican a los satélites y los receptores deben atravesar a la atmósfera a través de una considerable distancia. El sólo hecho de atravesar partículas cargadas en la ionósfera\footnotemark y entrar en contacto con el vapor de agua de la tropósfera causa variaciones de velocidad en la transmisión. La figura~\ref{fig:ErrGAtm} muestra una gráfica que muestra la densidad electrónica y la temperatura de las capas. \\
 
 El error en distancia atribuible a esta etapa es de 4 metros. 
 
@@ -456,7 +456,7 @@ GPS nació siendo un proyecto de tipo militar. Tras liberarse para uso civil en 
 
 \section{Comunicación inalámbrica}
 
-Se dice que dos dispositivos se comunican de forma \textbf{inalámbrica} cuando éstos interactúan sin un contacto sólido entre sus masas. En los aparatos electrónicos, se suelen usar ondas de radiofrecuencia, que a su vez se subclasifican dependiendo de la velocidad a la que son emitidas. A menor frecuencia, se obtiene una gran cobertura pero la capacidad se ve mermada. Conforme aumenta, se pierde capacidad de alcance pero la carga de información que puede tener, aumenta. Se dice entonces que existe una relación inversamente proporcional entre capacidad y frecuencia.\\
+Se dice que dos dispositivos se comunican de forma inalámbrica cuando éstos interactúan sin un contacto sólido entre sus masas. En los aparatos electrónicos, se suelen usar ondas de radiofrecuencia, que a su vez se subclasifican dependiendo de la velocidad a la que son emitidas. A menor frecuencia, se obtiene una gran cobertura pero la capacidad se ve mermada. Conforme dicha frecuencia aumenta, se pierde capacidad de alcance pero la carga de información que puede tener, aumenta. Se dice entonces que existe una relación inversamente proporcional entre capacidad y frecuencia.\\
 
 Actualmente, no existe algún organismo internacional que regule las frecuencias utilizadas por los dispositivos de comunicación inalámbrica, por lo que cada país ha de adoptar una regulación propia. En Estados Unidos es la \textit{FCC} (Federal Communications Commission\footnotemark)\footnotetext{Comisión Federal de Comunicaciones, por sus siglas en inglés.}~quien determina dichas regulaciones. En México, es el Instituto Federal de Telecomunicaciones quien se encarga de dichas tareas regulatorias \citep{porinstituto}. Otras organizaciones reguladoras son la \textit{ISO} (International Organization for Standardization\footnotemark) y la \textit{EPCglobal}.
 
@@ -647,7 +647,7 @@ Requerido cuando el objeto al que se quiere conocer su posición, se encuentra e
 
 \footnotetext{Imagen tomada de \href{https://upload.wikimedia.org/wikipedia/commons/7/79/Aeryon_Scout_In_Flight.jpg}{https://upload.wikimedia.org/}}
 
-Un VANT o Vehículo Aéreo no Tripulado (UAV, por sus siglas en inglés) es definido como un vehículo con operaciones y sistemas mecatrónicos, con computadoras a bordo y supervisado por humanos desde tierra \citep{haluani2015tecnologia}. Un ejemplo de éstos se muestra en la figura~\ref{fig:UAV}. Los vehículos aéreos no tripulados estuvieron orientados inicialmente para operaciones de contexto militar \citep{fahlstrom2012introduction}. En usos civiles, se pueden destacar empresas que investigan formas de entregar paquetes mediante el uso de esta tecnología, así como observaciones meteorológicas.\\
+Un VANT o Vehículo Aéreo no Tripulado es definido como un vehículo con operaciones y sistemas mecatrónicos, con computadoras a bordo y supervisado por humanos desde tierra \citep{haluani2015tecnologia}. Un ejemplo de éstos se muestra en la figura~\ref{fig:UAV}. Los vehículos aéreos no tripulados estuvieron orientados inicialmente para operaciones de contexto militar \citep{fahlstrom2012introduction}. En usos civiles, se pueden destacar empresas que investigan formas de entregar paquetes mediante el uso de esta tecnología, así como observaciones meteorológicas.\\
 
 Algunas áreas de aplicación de los VANT son \citep{addati2014introduccion}:
 
@@ -674,7 +674,7 @@ Para posicionamiento y velocidad.
 
 \begin{itemize}
 \item GPS.
-\item Compás.
+\item Brújula.
 \end{itemize}
 
 \section{Conclusión}
