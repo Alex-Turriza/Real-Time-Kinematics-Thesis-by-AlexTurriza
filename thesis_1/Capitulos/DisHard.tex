@@ -29,7 +29,7 @@ En el diagrama de la figura~\ref{fig:diagcomp} se muestran los componentes de ca
 \label{fig:diaghard}
 \end{figure}
 
-El sistema cuenta con dos estaciones, tal y como se puede observar en la figura~\ref{fig:diaghard}:  una que es conocida como\textit{estación base} y es la encargada de ofrecer datos de corrección de las observaciones de GPS, y una estación móvil, cuyo posicionamiento se desea conocer. 
+El sistema cuenta con dos estaciones, tal y como se puede observar en la figura~\ref{fig:diaghard}:  una que es conocida como \textit{estación base} y es la encargada de ofrecer datos de corrección de las observaciones de GPS, y una estación móvil, cuyo posicionamiento se desea conocer. 
 
 \subsection{Descripción de la estación base}
 
@@ -47,7 +47,7 @@ La estación base cuenta con dos componentes principales:
 \item Módulo de Comunicación inalámbrica.
 \end{itemize}
 
-En la figura~\ref{fig:estbase} se puede observar la estación base en una prueba realizada en el exterior. En la memoria de la tarjeta Ublox C94-M8P de esta estación se encuentran las coordenadas de su posición actual (se pueden actualizar vía PC utilizando el Anexo de Configuración de los Dispositivos GPS Ublox C94-M8P para su uso en RTKLIB en el apéndice~\ref{Anx:ublox}, adjunto a esta tesis).\\
+En la figura~\ref{fig:estbase} se puede observar la estación base en una prueba realizada en el exterior. En la memoria de la tarjeta Ublox C94-M8P de esta estación se encuentran las coordenadas de su posición actual (se pueden actualizar vía PC utilizando el anexo de configuración de los dispositivos GPS Ublox C94-M8P para su uso en RTKLIB en el apéndice~\ref{Anx:ublox}, adjunto a esta tesis).\\
 
 Mediante la comunicación inalámbrica, los datos de posicionamiento necesarios para aplicar correcciones son enviadas a la tarjeta Ublox de la estación móvil, utilizando el protocolo RTCM3.
 
@@ -64,7 +64,7 @@ Mediante la comunicación inalámbrica, los datos de posicionamiento necesarios 
 
 \footnotetext{Todos los diagramas de conexión electrónica son para referencia y no muestran el estado real del cableado. Todos fueron realizados con el software fritzing.}
 
-El diseño de los componentes de la estación móvil gira en torno a las capacidades y al diseño del GPS Ublox C94-M8P, de quien se tomarán dos datos importantes: \textbf{datos de posicionamiento de esta misma tarjeta}, ofrecidos por un \textbf{puerto microUSB}, y los \textbf{datos de corrección de posición} proporcionados por la estación base a través de comunicación inalámbrica, obtenidos por \textbf{protocolo RS232}, a través de un periférico como el que se muestra en la figura~\ref{fig:convert}. Por tanto, en la tarjeta BeagleBone Black, son reservados el puerto USB y un puerto (dos pines) de comunicación serial.\\
+El diseño de los componentes de la estación móvil gira en torno a las capacidades y al diseño del GPS Ublox C94-M8P, de quien se tomarán dos datos importantes: datos de posicionamiento de esta misma tarjeta, ofrecidos por un puerto microUSB, y los datos de corrección de posición proporcionados por la estación base a través de comunicación inalámbrica, obtenidos por protocolo RS232, a través de un periférico como el que se muestra en la figura~\ref{fig:convert}. Por tanto, en la tarjeta BeagleBone Black, son reservados el puerto USB y un puerto (dos pines) de comunicación serial.\\
 
 \subsubsection{Visualización de resultados}
 
@@ -128,12 +128,14 @@ Una captura de pantalla de RTKRCV funcionando puede verse en la figura~\ref{fig:
 \label{fig:rtkrcv1}
 \end{figure}
 
-\item \textbf{Hacer funcionar el sistema en GNU/Linux ARM:} Una vez configurado correctamente para GNU/Linux en el punto anterior, sólo quedaba conectar todo a la microcomputadora BeagleBone y verificar que todo funcionase como en la PC. Los datos de salida de RTKLIB son ofrecidos vía socket y son recibidos a través de otro programa programado en C++ del que se hablará más adelante.
+\item \textbf{Hacer funcionar el sistema en GNU/Linux ARM:} Una vez configurado correctamente para GNU/Linux en el punto anterior, sólo quedaba conectar todo a la microcomputadora BeagleBone y verificar que todo funcionase como en la PC. Los datos de salida de RTKLIB son ofrecidos vía socket y son recibidos a través de otro programa codificado en C++.
 \end{itemize}
 
 \subsection{Biblioteca BlackGPIO}
 
-La biblioteca BlackGPIO fue desarrollada para poder tener un control ordenado de los puertos de la BeagleBone a través de programación en C++. Utilizándole, se crearon otras dos bibliotecas a partir de las cuales se pueden instanciar objetos conectados a la microcomputadora.
+La biblioteca BlackGPIO fue desarrollada por Yigit Yuce\footnotemark para poder tener un control ordenado de los puertos de la BeagleBone a través de programación en C++. Utilizándole, se crearon otras dos bibliotecas a partir de las cuales se pueden instanciar objetos conectados a la microcomputadora.
+
+\footnotetext{\href{https://github.com/yigityuce/BlackLib}{https://github.com/yigityuce/BlackLib}}
 
 \subsubsection{Biblioteca GPS}
 
