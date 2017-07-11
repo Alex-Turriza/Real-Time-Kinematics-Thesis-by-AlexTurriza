@@ -24,7 +24,7 @@ En esta sección se presenta la teoría de varios elementos clave en el prototip
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.95\textwidth]{Figures/GPS}
-\caption[Sistema de Posicionamiento Global.]{Sistema de Posicionamiento Global.\footnotemark}
+\caption[Sistema de Posicionamiento Global: aplicación en obtención de rutas.]{Sistema de Posicionamiento Global: aplicación en obtención de rutas.\footnotemark}
 \label{fig:GPS}
 \end{figure}
 
@@ -352,20 +352,24 @@ E_k = M_k + esin(E_k)
 \end{equation}
 
 donde $M_k$ es la anomalía media en radianes, dada por: \\
-
+\begin{center}
 $M_k = M_0 + t_k n$\\
+\end{center}
 
 del que $t_k$ es el tiempo desde la época referenciada, dada por:\\
-
+\begin{center}
 $t_k = t - t_{oe}$\\
+\end{center}
 
 en el cual $t_{oe}$ es una constante dada en la observación satelital. $M_0$ es una constante dada en la observación satelital y $n$ es la media de corrección de movimiento, en radianes por segundo (rps), dada por:\\
-
+\begin{center}
 $n = n_0 + \Delta n$\\
+\end{center}
 
 Donde $n_0$ es la media de compensación de movimiento en rps, dada por:\\
-
+\begin{center}
 $n_0 = \sqrt{\mu / A^{3}}$\\ 
+\end{center}
 
 y $\Delta n$ es una constante dada por la observación.\\
 
@@ -397,7 +401,7 @@ Como en todo sistema de medición, es probable que un cálculo de una posición 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{Figures/Sat}
-\caption[Error del reloj atómico satelital.]{Error del reloj atómico satelital\footnotemark.}
+\caption[Satélite: incorporan un reloj atómico que puede causar error.]{Satélite: incorporan un reloj atómico que puede causar error.\footnotemark.}
 \label{fig:ErrSat}
 \end{figure}
 
@@ -428,8 +432,8 @@ El error en distancia atribuible a esta etapa es de 4 metros.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/RutasMult2}
-\caption[Error por rutas múltiples.]{Error por rutas múltiples\footnotemark.}
+\includegraphics[width=0.75\textwidth]{Figures/RutasMult2}
+\caption[Árboles pueden causar error por rutas múltiples.]{Árboles pueden causar de error por rutas múltiples\footnotemark.}
 \label{fig:ErrRMul}
 \end{figure}
 
@@ -441,8 +445,8 @@ El error en distancia atribuible a esta etapa es de 4 metros.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/disp}
-\caption[Error del receptor.]{Error del receptor\footnotemark.}
+\includegraphics[width=0.6\textwidth]{Figures/disp}
+\caption[Receptor GPS con reloj incorporado que puede causar error.]{Receptor GPS con reloj incorporado que puede causar error\footnotemark.}
 \label{fig:ErrRec}
 \end{figure}
 
@@ -513,7 +517,7 @@ Los Sistemas Embebidos son sistemas programables, que realizan tareas específic
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/BeagleBoneBlack}
+\includegraphics[width=0.8\textwidth]{Figures/BeagleBoneBlack}
 \caption[BeagleBone Black.]{BeagleBone Black\footnotemark.}
 \label{fig:BBlack}
 \end{figure}
@@ -555,7 +559,7 @@ Linux es un sistema operativo. Un sistema operativo es un conjunto de programas 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.95\textwidth]{Figures/DGPS1}
+\includegraphics[width=0.8\textwidth]{Figures/DGPS1}
 \caption[Esquema de funcionamiento en RTK.]{Esquema de funcionamiento en RTK, por \cite{fallas2002sistema}.}
 \label{fig:RTK}
 \end{figure}
